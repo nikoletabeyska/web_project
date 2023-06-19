@@ -1,0 +1,24 @@
+body{
+    text-align: center;
+    background-image: url("backgroundphoto.svg");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    background-color: green;
+    margin-top: 23%;
+    margin-bottom: 23%;
+    color:white;
+    font-size: 175%;
+    overflow:hidden;
+}
+a{
+    text-decoration: none;
+    margin-top: 0%;
+}
+button{
+    background-color: rgb(224, 125, 31);
+    margin-top: 0%;
+}
+h6{
+    margin-bottom: 0%;
+}
