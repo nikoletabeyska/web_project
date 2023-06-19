@@ -20,29 +20,33 @@ class UserRequestHandler {
             if($user){
                 // da proverq dali parolata suvpada s vuvedenata
                 if(password_verify($filteredLoginData['password'],$user['password'])){
-                    echo "success login";
+                    // echo "success login";
                     session_start();
                     //problemno li e
                     $_SESSION['user_id']=$user['id'];
                     $_SESSION['username']=$user['username'];
 
-                    echo "Welcome, ".$_SESSION['username'];
+                    // echo "Welcome, ".$_SESSION['username'];
 
                     // expires after three hours
                     $sessionId=session_id();
                     setcookie('session_id',$sessionId,time()+10800,'/');
+                    echo json_encode(["valid" => true, "message" => "Sucesfull Login".$filteredLoginData['password']]);
                 }
                 else{
-                    echo "wrong password";
+                    echo json_encode(["error" => "Грешна парола"]);
+                    // echo "wrong password";
                 }
             }
             else{
                 // pylnene na error mqstoto s greshka, che nqma takyw user
-                echo "no such user found here";
+                echo json_encode(["error" => "Грешна потребител"]);
+
+                // echo "no such user found here";
             }
             //fininsh the if/else check for correct hased password
             
-            echo json_encode(["valid" => true, "message" => "Sucesfull Login".$filteredLoginData['password']]);
+            // echo json_encode(["valid" => true, "message" => "Sucesfull Login".$filteredLoginData['password']]);
 
         } catch (PDOException $e) {
             http_response_code(500);

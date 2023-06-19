@@ -28,23 +28,9 @@ CREATE TABLE `users` (
   `name` varchar(20) NOT NULL,
   `surname` varchar(20) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `password` varchar(15) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-DROP TABLE IF EXISTS `permissions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `permissions` (
-  `permission_id` int(255) NOT NULL AUTO_INCREMENT,
-  `file_id` int(255) NOT NULL,
-  `granted_by` int(255) NOT NULL,
-  `granted_to` int(255) NOT NULL,
-  PRIMARY KEY (`permission_id`),
-  UNIQUE KEY `file_id` (`file_id`),
-  UNIQUE KEY `granted_by` (`granted_by`),
-  UNIQUE KEY `granted_to` (`granted_to`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

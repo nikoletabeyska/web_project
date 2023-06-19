@@ -3,9 +3,12 @@ function sendRequest(url, userData) {
     console.log('Sending request with userData:', JSON.stringify(userData));
     fetch(url, {
         method: 'POST',
-        headers: headers,
-        body: bodyData,
-    })
+        headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+        //'Content-Type': 'application/json',
+        },
+         body: JSON.stringify(userData)
+   })
     .then(response => {
         if (response.ok) {
             console.log("response ok");

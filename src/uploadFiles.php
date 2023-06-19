@@ -34,7 +34,8 @@
 
         $files = $_FILES['files'];
         $uploadFileToDatabase = new UserRequestHandler();
-
+        session_start();
+        
         for($i = 0; $i < $countFiles ; $i++) {
 
             $fileName = $files['name'][$i];
