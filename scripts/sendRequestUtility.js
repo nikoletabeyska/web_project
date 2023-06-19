@@ -1,13 +1,10 @@
-function sendRequest(url, userData, successCallback) {
+function sendRequest(url, userData) {
     console.log("in send request");
     console.log('Sending request with userData:', JSON.stringify(userData));
     fetch(url, {
         method: 'POST',
-        headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-        //'Content-Type': 'application/json',
-        },
-         body: JSON.stringify(userData)
+        headers: headers,
+        body: bodyData,
     })
     .then(response => {
         if (response.ok) {
@@ -33,14 +30,14 @@ function sendRequest(url, userData, successCallback) {
     });
 }
 
-  function clearErrorMessages(){
+function clearErrorMessages(){
     const errors = document.getElementsByClassName('error');
     for(let i = 0; i < errors.length; i++) {
         errors[i].textContent = '';
     }
-  }
+}
 
-  function displayErrorMessages(errors) {
+function displayErrorMessages(errors) {
     // iterate over the entries of the errors object and perform a callback function for each entry
     for (var key in errors) {
         if (errors.hasOwnProperty(key)) {
@@ -55,9 +52,9 @@ function sendRequest(url, userData, successCallback) {
         }
     }
 
-  }
+}
 
-  function displaySuccess(response) {
+function displaySuccess(response) {
     console.log("in scb");
     var success = document.getElementById('success');
     success.textContent = response;

@@ -4,12 +4,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="scripts/sendRequestUtility.js" defer></script>
         <script src="scripts/registration.js" defer></script>
+        <link href="styles/registration.css" rel="stylesheet">
         <title>Registration form</title>
     </head>
 
     <body>
+        <h2>Регистрация</h2>
         <form method = "POST" id="registration-form">
             <span id="all-errors" class="error"></span>
+            <div>
+                <label for="name">Потребителско име:</label>
+                <input type="text" id="username" name ="username" required placeholder="Потребителско име" class="full-width">
+                <span id="username-error" class="error"></span>
+            </div>
             <div>
                 <label for="name">Име:</label>
                 <input type="text" id="name" name ="name" required placeholder="Име" class="full-width">
@@ -39,6 +46,9 @@
                 <button class="btn" id="register">Регистрация</button>
             </div>
             <p id="success"></p>
+            <div class="container">
+                <p>Already have an account? <a href="#">Sign in</a>.</p>
+            </div>
         </form>
     </body>
 </html>
