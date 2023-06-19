@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="scripts/sendRequestUtility.js" defer></script>
+        <script src="scripts/registration.js" defer></script>
+        <title>Registration form</title>
+    </head>
+    <body>
+        <form method = "POST" id="registration-form">
+            <span id="all-errors" class="error"></span>
+            <div>
+                <label for="name">Име:</label>
+                <input type="text" id="name" name ="name" required placeholder="Име" class="full-width">
+                <span id="name-error" class="error"></span>
+            </div>
+            <div>
+                <label for="surname">Фамилия:</label>
+                <input type="text"  id="surname" name="surname" required placeholder="Фамилия" class="full-width">
+                <span id="surname-error" class="error"></span>
+            </div>
+            <div>
+                <label for="username">Потребителско Име:</label>
+                <input type="text" id="username" name ="username" required placeholder="Потребителско Име" class="full-width">
+                <span id="username-error" class="error"></span>
+            </div>
+            <div>
+                <label for="email">Имейл:</label>
+                <input type="email" id="email" name="email" required placeholder="Имейл" class="full-width">
+                <span id="email-error" class="error"></span>
+            </div>
+            <div>
+                <label for="password">Парола:</label>
+                <input type="password" id="password" name="password" required placeholder="Парола" class="full-width">
+                <span id="password-error" class="error"></span>
+            </div>
+            <div>
+                <label for="confirm-password">Потвърди паролата:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required placeholder="Парола" class="full-width">
+                <span id="confirm-password-error" class="error"></span>
+            </div>
+            <div>
+                <button class="btn" id="register">Регистрация</button>
+            </div>
+            <p id="success"></p>
+        </form>
+    </body>
+</html>

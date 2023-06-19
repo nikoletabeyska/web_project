@@ -42,6 +42,7 @@
             $fileSize = $files['size'][$i];
             $fileError = $files['error'][$i];
             $fileType = $files['type'][$i];
+            $fileOwner = $_SESSION['user_id'];
     
             // creates an array with delimeter "."
             $fileExt = explode('.',$fileName);  
@@ -63,6 +64,7 @@
                             'name' => $fileNewName,
                             'size' => $fileSize,
                             'type' => $fileType,
+                            'owner' => $fileOwner,
                             'path' => $fileDestination
                         ];
 
