@@ -15,11 +15,22 @@ function renderFileList(files) {
     fileList.innerHTML = "";
     
     files.forEach(function(file) {
-        
+  
         var row = document.createElement("tr");
 
+
+        var check = document.createElement("td");
+        var checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.name = "file-checkbox";
+        check.appendChild(checkbox);
+        row.appendChild(check);
+
         var name = document.createElement("td");
-        name.textContent = file.name;
+        var link = document.createElement("a");
+        link.href = "http://localhost/web_project/singlefile.html?file=" + encodeURIComponent(file);
+        link.textContent = file.name;
+        name.appendChild(link);
         row.appendChild(name);
 
         var type = document.createElement("td");
@@ -45,4 +56,11 @@ function renderFileList(files) {
         fileList.appendChild(row);
 
     });
+
+   
 }
+
+
+
+
+// Event handler for checkbox changes

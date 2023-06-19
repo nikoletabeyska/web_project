@@ -15,6 +15,7 @@ window.onload = (function() {
         }
         
         uploadRequest('http://localhost/web_project/src/uploadFiles.php',formData);
+        
       })
     })
   

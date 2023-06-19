@@ -42,7 +42,8 @@
             $fileSize = $files['size'][$i];
             $fileError = $files['error'][$i];
             $fileType = $files['type'][$i];
-            $fileOwner = $_SESSION['user_id'];
+            //$fileOwner = $_SESSION['user_id'];
+            $fileOwner = 1;
     
             // creates an array with delimeter "."
             $fileExt = explode('.',$fileName);  
@@ -55,13 +56,13 @@
 
                 if($fileSize < $maxFileSize) {
                     // If a you want to upload file which name already exists - > create unique name -> gets time in microseconds as a number
-                    $fileNewName = uniqid('', true).".".$fileActualExt; 
-                    $fileDestination = 'uploads/'.$fileNewName; 
+                    //$fileNewName = uniqid('', true).".".$fileActualExt; 
+                    $fileDestination = 'uploads/'.$fileName; 
 
                     if(move_uploaded_file($fileTmpName, $fileDestination)) { 
 
                         $fileData = [
-                            'name' => $fileNewName,
+                            'name' => $fileName,
                             'size' => $fileSize,
                             'type' => $fileType,
                             'owner' => $fileOwner,

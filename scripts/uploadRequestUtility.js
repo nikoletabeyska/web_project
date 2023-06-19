@@ -64,5 +64,6 @@ function displayUploadResult(data) {
                 resultsContainer.appendChild(resultElement);
             }
     }
+    getFiles();
 
 }

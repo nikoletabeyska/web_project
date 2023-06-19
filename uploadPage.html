@@ -7,7 +7,7 @@
     <script src="scripts/uploadRequestUtility.js" defer></script>
     <link href="styles/uploadFile.css" rel="stylesheet">
     <script src="scripts/displayFileList.js" defer></script>
-    
+    <script src="scripts/checkbox.js" defer></script>
     
 
     <title>Upload page</title>
@@ -40,10 +40,11 @@
 
 
 <h1>File List</h1>
-
+  <button id="delete-button" style="display:none">Delete</button>
     <table>
         <thead>
             <tr>
+                <th></th>
                 <th>Name</th>
                 <th>Content type</th>
                 <th>Size</th>

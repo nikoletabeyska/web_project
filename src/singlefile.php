@@ -1,5 +1,9 @@
 <?php
 
+$file = $_GET['file'];
+
+
+
  $filename = $_GET['path'];
 header('Content-type: Application/octet-stream');
 header('Content-Disposition: attachment; filename=$nome_file');

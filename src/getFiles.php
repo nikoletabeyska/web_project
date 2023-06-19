@@ -10,8 +10,8 @@
       // Redirect or handle unauthorized access
       // ...
   }*/
-
-  $userId = 2;
+  $userId = 1;
+  //$userId = $_SESSION['user_id'];
   $request = new UserRequestHandler();
   $files = $request->getFiles($userId);
   echo json_encode($files);
