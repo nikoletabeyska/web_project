@@ -6,6 +6,9 @@ window.onload = (
             const loginForm = document.getElementById('login-form');
             const inputs = loginForm.querySelectorAll('input');
 
+            const result=document.getElementById("loginInformation");
+            result.innerHTML="";
+
             //associative array for userData
             const userData = {};
             inputs.forEach(input => {

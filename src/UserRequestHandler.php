@@ -31,6 +31,7 @@ class UserRequestHandler {
                     $sessionId=session_id();
                     setcookie('session_id',$sessionId,time()+10800,'/');
                     echo json_encode(["valid" => true, "message" => "Sucesfull Login".$filteredLoginData['password']]);
+
     
                 }
                 else{
@@ -172,8 +173,7 @@ class UserRequestHandler {
        
         try{
             $connection = (new Db())->getConnection();
-            $query = "
-            SELECT file.name, user.username , file.date
+            $query = "SELECT file.name, user.username , file.date
             FROM `files` file
             JOIN `users` user ON file.owner = user.id
             WHERE file.owner = :userId

@@ -19,7 +19,6 @@ function sendRequest(url, userData) {
         }
     })
     .then(responseData => {
-
         if (!responseData.valid) {
             clearErrorMessages();
             displayErrorMessages(responseData.errors);

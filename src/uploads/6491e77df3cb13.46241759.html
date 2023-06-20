@@ -4,8 +4,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Преглед на файл</title>
-        <script src="scripts/singlefiledownload.js" defer></script>
-        <script src="scripts/sendRequestUtility.js" defer></script>
     </head>
     <body>
         <h1>Преглед на файл</h1>
@@ -20,7 +18,7 @@
             <p id="file-contents"></p>
         </div>
         <div>
-            <button id="downloadButton" >Изтегли</button>
+            <button id="downloadButton" onclick="downloadFile(path)">Изтегли</button>
         </div>
     </body>
 </html>
