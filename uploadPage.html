@@ -7,6 +7,9 @@
     <script src="scripts/uploadRequestUtility.js" defer></script>
     <link href="styles/uploadFile.css" rel="stylesheet">
     <script src="scripts/displayFileList.js" defer></script>
+    <script src="scripts/checkboxAll.js" defer></script>
+    <script src="scripts/deleteFiles.js" defer></script>
+    
     
     
 
@@ -40,14 +43,14 @@
 
 
 <h1>File List</h1>
-
-    <table>
+    
+    <table id="file-list-table">
+      <input type="checkbox" id="checkAll"> Check All</input>
+      <button id="delete-button">Delete</button>
         <thead>
             <tr>
+                <th></th>
                 <th>Name</th>
-                <th>Content type</th>
-                <th>Size</th>
-                <th>Access</th>
                 <th>Owner</th>
                 <th>Upload date</th>
             </tr>
