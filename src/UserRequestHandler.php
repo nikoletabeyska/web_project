@@ -20,18 +20,18 @@ class UserRequestHandler {
             if($user){
                 // da proverq dali parolata suvpada s vuvedenata
                 if(password_verify($filteredLoginData['password'],$user['password'])){
-                    // echo "success login";
+                   
+                    // echo "Welcome, ".$_SESSION['username'];
                     session_start();
                     //problemno li e
                     $_SESSION['user_id']=$user['id'];
                     $_SESSION['username']=$user['username'];
 
-                    // echo "Welcome, ".$_SESSION['username'];
-
                     // expires after three hours
                     $sessionId=session_id();
                     setcookie('session_id',$sessionId,time()+10800,'/');
                     echo json_encode(["valid" => true, "message" => "Sucesfull Login".$filteredLoginData['password']]);
+    
                 }
                 else{
                     echo json_encode(["error" => "Грешна парола"]);
@@ -150,11 +150,11 @@ class UserRequestHandler {
        
         try{
             $connection = (new Db())->getConnection();
+            
             $insertStatement = $connection->prepare("
                 INSERT INTO `files` (name, size, type, owner, path)
                 VALUE (:name, :size, :type, :owner, :path)
             ");
-
             $insertStatement->execute($fileData);
             $connection = null;
             return true;
@@ -173,7 +173,7 @@ class UserRequestHandler {
         try{
             $connection = (new Db())->getConnection();
             $query = "
-            SELECT file.name, file.type, file.size, user.username , file.date
+            SELECT file.name, user.username , file.date
             FROM `files` file
             JOIN `users` user ON file.owner = user.id
             WHERE file.owner = :userId
@@ -186,6 +186,28 @@ class UserRequestHandler {
             $rows = $selectStatement->fetchAll();
             $connection = null;
             return $rows;
+
+        } catch (PDOException $e) {
+            http_response_code(500);
+            print "Error: " . $e->getMessage();
+            return false;
+        }
+
+    }
+
+    public function deleteFiles($names) : bool {
+       
+        try{
+            $connection = (new Db())->getConnection();
+
+            foreach ($names as $name) {
+                $query = "DELETE FROM `files` WHERE name = ?";
+                $selectStatement = $connection->prepare($query);
+                $selectStatement->execute([$name]);
+            }
+           
+            $connection = null;
+            return true;
 
         } catch (PDOException $e) {
             http_response_code(500);
