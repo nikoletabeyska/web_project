@@ -10,7 +10,7 @@
 
     $targetDir = "uploads/";
     date_default_timezone_set("Europe/Sofia");
-
+    
     // Create the directory if it doesn't exist
     if (!is_dir($targetDir)) {
         mkdir($targetDir, 0777, true);
