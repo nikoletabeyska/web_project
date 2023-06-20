@@ -79,20 +79,4 @@ form {
       background-color: #ebebeb;
   }
 
-  #delete-button {
-        background-color: #ff0000; /* Background color */
-        color: #ffffff; /* Text color */
-        border: none; /* Remove border */
-        padding: 8px 16px; /* Padding around the button */
-        font-size: 14px; /* Font size */
-        border-radius: 4px; /* Rounded corners */
-        cursor: pointer; /* Show pointer cursor on hover */
-        float:right;
-  }
-      
-      /* Hover effect */
- #delete-button:hover {
-        background-color: #cc0000; /* Change background color on hover */
-    }
-     
   

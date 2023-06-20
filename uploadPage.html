@@ -1,17 +1,13 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta chrset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link href="styles/uploadPage.css" rel="stylesheet">-->
     <script src="scripts/uploadPage.js" defer></script>
     <script src="scripts/uploadRequestUtility.js" defer></script>
     <link href="styles/uploadFile.css" rel="stylesheet">
     <script src="scripts/displayFileList.js" defer></script>
-    <script src="scripts/checkboxAll.js" defer></script>
-    <script src="scripts/deleteFiles.js" defer></script>
-    
-    
+    <script src="scripts/checkbox.js" defer></script>
     
 
     <title>Upload page</title>
@@ -44,14 +40,15 @@
 
 
 <h1>File List</h1>
-    
-    <table id="file-list-table">
-      <input type="checkbox" id="checkAll"> Check All</input>
-      <button id="delete-button">Delete</button>
+  <button id="delete-button" style="display:none">Delete</button>
+    <table>
         <thead>
             <tr>
                 <th></th>
                 <th>Name</th>
+                <th>Content type</th>
+                <th>Size</th>
+                <th>Access</th>
                 <th>Owner</th>
                 <th>Upload date</th>
             </tr>

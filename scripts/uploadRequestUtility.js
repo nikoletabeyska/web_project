@@ -12,7 +12,7 @@ function uploadRequest(url,userData) {
             return response.json();
           })
           .then(data => {
-            //console.log(data);
+            console.log(data);
             clearMessages();
             displayUploadResult(data);
           })
@@ -28,7 +28,6 @@ function clearMessages(){
 }
 
 function displayUploadResult(data) {
-
     var resultsContainer = document.getElementById('result');
     var countInfo = data.countInfo;
 
@@ -42,23 +41,15 @@ function displayUploadResult(data) {
     }
 
     var responseData = data.response;
-        
+            // Process the JSON data received from the PHP script
     for (var i = 0; i < responseData.length; i++) {
-
             var fileName = responseData[i].filename;
             var isSuccess = responseData[i].success;
             var message = responseData[i].message;
-
             if(data.hasOwnProperty('developerMessage')){
                 var devMessage = responseData[i].developerMessage;
             }
             console.log(devMessage);
-
-            // update table after uploading every file -> could be done altogether out of this loop
-            if(isSuccess){
-              //console.log(data.fileDataCollection[i]);
-              renderFileList([data.fileDataCollection[i]],true);
-            }
 
             if (!isSuccess) {
                 var resultElement = document.createElement('div');
@@ -73,5 +64,6 @@ function displayUploadResult(data) {
                 resultsContainer.appendChild(resultElement);
             }
     }
+    getFiles();
 
 }

@@ -1,4 +1,5 @@
 <?php
+    
    require_once 'UserRequestHandler.php';
    // Allow requests from any origin
    header('Access-Control-Allow-Origin: *');
@@ -8,19 +9,20 @@
    header('Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Authorization');
 
     $targetDir = "uploads/";
-
+    date_default_timezone_set("Europe/Sofia");
+    
     // Create the directory if it doesn't exist
     if (!is_dir($targetDir)) {
         mkdir($targetDir, 0777, true);
     }
-
+    
     $countInfo = [];
     $response = array();
+    $fileDataCollection = array();
     $fileData = [];
     $countSuccessful = 0;
     $originalCount = 0;
-
-    //$allowed = array('jpg','jpeg','png','pdf');
+    
 
     if (isset($_FILES['files'])) {
 
@@ -31,10 +33,13 @@
             $countInfo['error'] = 'Превишен лимит на брой избрани файлове! Лимитът е 20 файла!';
             $countFiles = 20;
         }
-
+        
+        
         $files = $_FILES['files'];
         $uploadFileToDatabase = new UserRequestHandler();
-
+        session_start();
+        
+        
         for($i = 0; $i < $countFiles ; $i++) {
 
             $fileName = $files['name'][$i];
@@ -42,15 +47,12 @@
             $fileSize = $files['size'][$i];
             $fileError = $files['error'][$i];
             $fileType = $files['type'][$i];
-            //$fileOwner = $_SESSION['user_id'];
-            $fileOwner = 1;
-    
+            $fileOwner = $_SESSION['user_id'];
+            
             // creates an array with delimeter "."
             $fileExt = explode('.',$fileName);  
             $fileActualExt = strtolower(end($fileExt)); 
             $maxFileSize = 40 * 1024 * 1024;
-
-            //if(in_array($fileActualExt, $allowed)) {
 
             if($fileError === 0) {
 
@@ -66,8 +68,9 @@
                             'size' => $fileSize,
                             'type' => $fileType,
                             'owner' => $fileOwner,
-                            'path' => $fileDestination
+                            'path' => $fileDestination,
                         ];
+
 
                         $success = $uploadFileToDatabase->uploadFile($fileData);
 
@@ -79,6 +82,13 @@
                                 'message' => 'Файлът е качен успешно!'
                             );
 
+                            $data = [
+                                'name' => $fileName,
+                                'username' => $fileOwner,
+                                'date' => date('m/d/Y h:i:s', time())
+                            ];
+
+                            $fileDataCollection[] = $data;
                             $countSuccessful++;
                         } else {
                             $response[] = array(
@@ -116,15 +126,6 @@
                     'developerMessage' => $errorMessage
                 );
             }
-
-        /*} else {
-            $response[] = array(
-                'filename' => $fileName,
-                'success' => false,
-                'message' => 'Грешка при качването на файла! Невалиден тип файл (позволените типове са ...).'
-            );
-        }
-        */ 
         }
 
     } else{
@@ -132,7 +133,7 @@
     }
 
     $countInfo['success'] = $countSuccessful . ' от ' . $originalCount . ' файла са качени успешно!';
-    echo json_encode(['countInfo' => $countInfo, 'response' => $response]);
+    echo json_encode(['countInfo' => $countInfo, 'response' => $response, 'fileDataCollection' => $fileDataCollection]);
 
 
 

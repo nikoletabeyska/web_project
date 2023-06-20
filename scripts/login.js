@@ -16,7 +16,7 @@ window.onload = (
             });
             console.log("Login User Json Data")
             console.log(userData);
-            sendRequest('http://localhost/web_project/src/login.php', userData);
+            sendRequest('http://localhost/src/login.php', userData);
 
         });
     }
