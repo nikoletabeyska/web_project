@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="scripts/sendRequestUtility.js" defer></script>
+        <script src="scripts/login.js" defer></script>
+        <title>Login</title>
+    </head>
+    <body>
+        <form method="POST" id="login-form">
+            <span id="all-errors" class="error"></span>
+            <div>
+                <label for="username">Потребителско Име:</label>
+                <input type="text" id="username" name ="username" required placeholder="Потребителско Име" class="full-width">
+                <span id="username-error" class="error"></span>
+            </div>
+            <div>
+                <label for="password">Парола:</label>
+                <input type="password" id="password" name ="password" required placeholder="Парола" class="full-width">
+                <span id="password-error" class="error"></span>
+            </div>
+            <div>
+                <button id="loginButton" type="submit">Влез</button>
+            </div>
+                <p id="success"></p>
+        </form>
+        
+    </body>
+</html>
