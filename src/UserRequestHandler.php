@@ -36,11 +36,11 @@ class UserRequestHandler {
                 }
                 else{
                     echo json_encode(["error" => "Грешна парола"]);
-                    // echo "wrong password";
+                  
                 }
             }
             else{
-                // pylnene na error mqstoto s greshka, che nqma takyw user
+
                 echo json_encode(["error" => "Грешна потребител"]);
 
                 // echo "no such user found here";
