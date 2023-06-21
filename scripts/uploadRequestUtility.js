@@ -12,7 +12,6 @@ function uploadRequest(url,userData) {
             return response.json();
           })
           .then(data => {
-            console.log(data);
             clearMessages();
             displayUploadResult(data);
           })
@@ -28,6 +27,7 @@ function clearMessages(){
 }
 
 function displayUploadResult(data) {
+  
     var resultsContainer = document.getElementById('result');
     var countInfo = data.countInfo;
 
@@ -41,15 +41,22 @@ function displayUploadResult(data) {
     }
 
     var responseData = data.response;
-            // Process the JSON data received from the PHP script
+    var successful = [];
+            
     for (var i = 0; i < responseData.length; i++) {
+
             var fileName = responseData[i].filename;
             var isSuccess = responseData[i].success;
             var message = responseData[i].message;
+
             if(data.hasOwnProperty('developerMessage')){
                 var devMessage = responseData[i].developerMessage;
             }
             console.log(devMessage);
+
+            if(isSuccess){
+              successful.push(data.fileDataCollection[i]);
+            }
 
             if (!isSuccess) {
                 var resultElement = document.createElement('div');
@@ -64,6 +71,8 @@ function displayUploadResult(data) {
                 resultsContainer.appendChild(resultElement);
             }
     }
-    getFiles();
+    // Update table after uploading every file 
+    renderFileList(successful,true);
+    //getFiles();
 
 }
