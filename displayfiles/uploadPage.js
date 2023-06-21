@@ -14,7 +14,7 @@ window.onload = (function() {
             formData.append('files[]',files[i]);
         }
         
-        uploadRequest('http://localhost/web_project/src/uploadFiles.php',formData);
+        uploadRequest('http://localhost/web_project/displayfiles/uploadFiles.php',formData);
         
       })
     })

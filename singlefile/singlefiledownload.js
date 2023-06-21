@@ -3,8 +3,9 @@ window.onload = (function() {
     var download = document.getElementById('downloadButton');
     download.addEventListener('click', function(event){
         const url = new URL(window.location.href); 
-        const pathParam = url.searchParams.get('path');
+        const pathParam =decodeURIComponent(url.searchParams.get('file'));
+        console.log(pathParam);
         // window.open('singlefile.php?path'+ pathParam + '_blank');
-        window.location = "http://localhost/web_project/src/singlefile.php?path=" + pathParam;
+        window.location = "http://localhost/web_project/singlefile/singlefile.php?file=" + pathParam;
     })
 })

@@ -13,7 +13,7 @@ window.onload = (function() {
             userData[input.name] = input.value;
        });
    
-       sendRequest('http://localhost/web_project/src/registration.php', userData);
+       sendRequest('http://localhost/web_project/registration/registration.php', userData);
 
     })
   

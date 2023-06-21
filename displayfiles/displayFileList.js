@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function getFiles() {
-    fetch("http://localhost/web_project/src/getFiles.php")
+    fetch("http://localhost/web_project/displayfiles/getFiles.php")
         .then(response => response.json())
         .then(files => renderFileList(files))
         .catch(error => console.error("Error:", error));
@@ -35,7 +35,9 @@ function renderFileList(files, isNew = false) {
 
         var name = document.createElement("td");
         var link = document.createElement("a");
-        link.href = "http://localhost/web_project/singlefile.html?file=" + encodeURIComponent(files[i]);
+        console.log(files);
+        link.href = "http://localhost/web_project/singlefile/singlefile.html?file=" + encodeURIComponent(files[i]);
+        console.log("URI :"+ decodeURIComponent(encodeURIComponent(files[i])));
         link.textContent = files[i].name;
         name.appendChild(link);
         row.appendChild(name);

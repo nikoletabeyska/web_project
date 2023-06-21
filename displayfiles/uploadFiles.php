@@ -1,6 +1,6 @@
 <?php
     
-   require_once 'UserRequestHandler.php';
+   require_once '../database/UserRequestHandler.php';
    // Allow requests from any origin
    header('Access-Control-Allow-Origin: *');
    // Allow the following HTTP methods
@@ -8,14 +8,14 @@
    // Allow the following headers
    header('Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Authorization');
 
-    $targetDir = "uploads/";
+    $targetDir = "../uploads/";
     date_default_timezone_set("Europe/Sofia");
     
     // Create the directory if it doesn't exist
     if (!is_dir($targetDir)) {
         mkdir($targetDir, 0777, true);
     }
-   
+    
     $countInfo = [];
     $response = array();
     $fileDataCollection = array();
@@ -59,7 +59,7 @@
                 if($fileSize < $maxFileSize) {
                     // If a you want to upload file which name already exists - > create unique name -> gets time in microseconds as a number
                     //$fileNewName = uniqid('', true).".".$fileActualExt; 
-                    $fileDestination = 'uploads/'.$fileName; 
+                    $fileDestination = '../uploads/'.$fileName; 
 
                     if(move_uploaded_file($fileTmpName, $fileDestination)) { 
 

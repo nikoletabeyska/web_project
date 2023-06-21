@@ -19,7 +19,7 @@ var deleteBtn = document.getElementById("delete-button");
 
 
   function deleteFiles(names, elements){
-    fetch(`http://localhost/web_project/src/deleteFiles.php`, {
+    fetch(`http://localhost/web_project/displayfiles/deleteFiles.php`, {
         method: 'POST',
         headers: {
         'Content-Type': 'application/x-www-form-urlencoded'

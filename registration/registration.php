@@ -1,8 +1,7 @@
 <?php
-// JS ATTACH EVENT -> HTML -> send request -> .php file :uses UserRequestHandler
-    require_once 'UserRequestHandler.php';
-    require_once "Db.php";
-    session_start();
+
+    require_once '../database/UserRequestHandler.php';
+    require_once "../database/Db.php";
     // Allow requests from any origin
     header('Access-Control-Allow-Origin: *');
     // Allow the following HTTP methods
@@ -13,12 +12,23 @@
     $errors = [];
     $isValid = true;
     $userData = json_decode(file_get_contents("php://input"), true); 
+
     if($userData) {
         $userHandler = new UserRequestHandler();
-        $userHandler->loginUser($userData);
+        $userHandler->validateUserData($userData, $errors, $isValid, $connection);
         
+        if(!$isValid) {
+            echo json_encode(['valid' => false, 'errors' => $errors]);
+            exit();
+        }
+
+        $userData["password"] = password_hash($userData["password"], PASSWORD_DEFAULT);
+        $result = $userHandler->createUser($userData);
+
     } else {
+        //
         $errors["all"] = "Некоректни данни!";
         echo json_encode(['valid' => false, 'errors' => $errors]);
-        exit();     
+        exit();
+       
     }
