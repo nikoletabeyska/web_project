@@ -196,15 +196,15 @@ class UserRequestHandler {
 
     }
 
-    public function deleteFiles($names) : bool {
+    public function deleteFiles($fileIds) : bool {
        
         try{
             $connection = (new Db())->getConnection();
 
-            foreach ($names as $name) {
-                $query = "DELETE FROM `files` WHERE name = ?";
+            foreach ($fileIds as $fileId) {
+                $query = "DELETE FROM `files` WHERE id = ?";
                 $selectStatement = $connection->prepare($query);
-                $selectStatement->execute([$name]);
+                $selectStatement->execute([$fileId]);
             }
            
             $connection = null;

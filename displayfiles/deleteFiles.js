@@ -8,8 +8,12 @@ var deleteBtn = document.getElementById("delete-button");
     checkboxes.forEach((checkbox) =>{
         if(checkbox.checked){
             var parent = checkbox.parentElement;
-            var el = parent.nextElementSibling;
-            checked.push(el.textContent);
+            var el = parent.nextElementSibling.firstChild;
+            var hrefValue = el.getAttribute('href');
+            var startIndex = hrefValue.indexOf('file=') + 'file='.length;
+            var fileId = hrefValue.substring(startIndex);
+            
+            checked.push(fileId);
             elements.push(el.parentElement);
         }
     })
@@ -18,13 +22,13 @@ var deleteBtn = document.getElementById("delete-button");
   });
 
 
-  function deleteFiles(names, elements){
+  function deleteFiles(fileIds, elements){
     fetch(`http://localhost/web_project/displayfiles/deleteFiles.php`, {
         method: 'POST',
         headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
         },
-         body: JSON.stringify(names)
+         body: JSON.stringify(fileIds)
     })
     .then(response => response.json())
     .then(data => {
