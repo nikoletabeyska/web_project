@@ -160,6 +160,7 @@ class UserRequestHandler {
             ");
             $insertStatement->execute($fileData);
             $connection = null;
+            print "Success: ".$fileData['id'].$fileData['name'].$fileData['owner']; 
             return true;
 
         } catch (PDOException $e) {

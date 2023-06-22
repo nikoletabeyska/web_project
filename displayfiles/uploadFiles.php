@@ -63,7 +63,11 @@
 
                     if(move_uploaded_file($fileTmpName, $fileDestination)) { 
 
+
+            $id = $fileName.$fileOwner;
+            $id= password_hash($id, PASSWORD_DEFAULT);
                         $fileData = [
+                            'id' => $id,
                             'name' => $fileName,
                             'size' => $fileSize,
                             'type' => $fileType,

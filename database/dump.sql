@@ -24,7 +24,7 @@ INSERT INTO `users` VALUES (1,'niki','n','b','nik@abv.bg','hi'),(2,'alex','a','z
 UNLOCK TABLES;
 
 CREATE TABLE `files` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `size` bigint(255) NOT NULL,
   `type` varchar(255) NOT NULL,
@@ -32,9 +32,9 @@ CREATE TABLE `files` (
   `owner` int(255) NOT NULL,
   `path` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `files_FK_1` (`owner`),
+--  KEY `files_FK_1` (`owner`),
   CONSTRAINT `files_FK_1` FOREIGN KEY (`owner`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `files`
@@ -47,7 +47,7 @@ UNLOCK TABLES;
 -- Table structure for table `permissions`
 CREATE TABLE `permissions` (
   `permision_id` int(255) NOT NULL AUTO_INCREMENT,
-  `file_id` int(255) NOT NULL,
+  `file_id` varchar(255) NOT NULL,
   `granted_by` int(255) NOT NULL,
   `granted_to` int(255) NOT NULL,
   PRIMARY KEY (`permision_id`),
