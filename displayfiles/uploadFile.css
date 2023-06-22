@@ -96,5 +96,91 @@ form {
       background-color: #cc0000; /* Change background color on hover */
 }
 
-
+#share-button {
+    background-color: #3498DB;
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    float:right;
+  }
   
+  #share-button:hover, #share-button:focus {
+    background-color: #2980B9;
+  }
+  
+  #window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 185px;
+    background: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 10px 10px 10px;
+    z-index: 9999;
+    text-align:center;
+  }
+  
+  #window.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   /* backdrop-filter: blur(4px);/*/
+    place-items: center;
+    padding: 10px 10px;
+    background: rgba(254, 252, 252);
+  }
+
+  .blur-background {
+   /* filter: blur(4px);*/
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .done-button {
+    background-color: #2c8f2c;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    margin: auto 
+
+  }
+  .close-button {
+    background-color: #c13228;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    margin: auto 
+
+  }
+
+  .done-button:hover, .done-button:focus {
+    background-color: #489a22;
+  }
+
+  .close-button:hover, .close-button:focus {
+    background-color: #ce4646;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+ #searchBox {
+    margin: auto;
+ }
+
+ #searchResults{
+    list-style: none; padding: 0;
+ }

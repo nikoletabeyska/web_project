@@ -14,8 +14,6 @@ function renderFileList(files, isNew = false) {
         files.sort(function(a, b) {
             var dateA = new Date(a.date);
             var dateB = new Date(b.date);
-            console.log(dateA);
-            console.log(dateB);
             return dateB - dateA; // Sort files in ascending order based on date
           });
     }
