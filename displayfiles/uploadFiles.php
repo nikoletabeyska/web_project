@@ -47,8 +47,9 @@
             $fileSize = $files['size'][$i];
             $fileError = $files['error'][$i];
             $fileType = $files['type'][$i];
-            $fileOwner = $_SESSION['user_id'];
-         
+           // $fileOwner = $_SESSION['user_id'];
+           
+           $fileOwner = 1;
             // creates an array with delimeter "."
             $fileExt = explode('.',$fileName);  
             $fileActualExt = strtolower(end($fileExt)); 
@@ -90,7 +91,7 @@
                             $data = [
                                 'id' => $result["id"],
                                 'name' => $fileName,
-                                'username' => $fileOwner,
+                                'username' => $_SESSION['username'], 
                                 'date' => date('m/d/Y h:i:s', time())
                             ];
 
