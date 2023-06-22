@@ -15,9 +15,13 @@ a{
     text-decoration: none;
     margin-top: 0%;
 }
+a:hover, a:link, a:visited{
+    color:black;
+}
 button{
-    background-color: rgb(224, 125, 31);
+    background-color: rgb(245, 62, 12);
     margin-top: 0%;
+    border-radius: 10px;
 }
 h6{
     margin-bottom: 0%;

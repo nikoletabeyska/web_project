@@ -52,7 +52,7 @@ class UserRequestHandler {
         } catch (PDOException $e) {
             http_response_code(500);
             print "Error: " . $e->getMessage();
-            echo json_encode(["error" => "Грешка при регистрация!"]);
+            echo json_encode(["error" => "Грешка при вход!"]);
         }
         
     }

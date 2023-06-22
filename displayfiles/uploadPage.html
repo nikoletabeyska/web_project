@@ -5,15 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link href="styles/uploadPage.css" rel="stylesheet">-->
     <script src="uploadPage.js" defer></script>
-    <script src="../database/uploadRequestUtility.js" defer></script>
-    <link href="uploadFile.css" rel="stylesheet">
+    <script src="../database/uploadRequestUtility.js" defer></script>  
     <script src="displayFileList.js" defer></script>
     <script src="checkboxAll.js" defer></script>
     <script src="deleteFiles.js" defer></script>
-    
-    
-    
-
+    <link rel="stylesheet" href="uploadFile.css">
     <title>Upload page</title>
 </head>
 <body>
@@ -42,17 +38,17 @@
 <script src="script.js"></script>
 -->
 
-<h1>File List</h1>
+<h1>Списък с файлове</h1>
     
     <table id="file-list-table">
-      <input type="checkbox" id="checkAll"> Check All</input>
-      <button id="delete-button">Delete</button>
+      <input type="checkbox" id="checkAll"> Избери всички</input>
+      <button id="delete-button">Изтрий</button>
         <thead>
             <tr>
                 <th></th>
-                <th>Name</th>
-                <th>Owner</th>
-                <th>Upload date</th>
+                <th>Име</th>
+                <th>Собственик</th>
+                <th>Дата на качване</th>
             </tr>
         </thead>
         <tbody id="file-list">
