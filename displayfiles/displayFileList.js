@@ -48,7 +48,6 @@ function renderFileList(files, isNew = false) {
         date.textContent = files[i].date;
         row.appendChild(date);
 
-        fileList.appendChild(row);
         if(!isNew){
             fileList.appendChild(row);
 

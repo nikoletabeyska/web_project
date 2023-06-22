@@ -147,9 +147,7 @@ class UserRequestHandler {
         return; 
     }
 
-    public function uploadFile($fileData) : bool {
-       
-        
+    public function uploadFile($fileData) {
 
         try{
             $connection = (new Db())->getConnection();
@@ -159,13 +157,14 @@ class UserRequestHandler {
                 VALUE (:id, :name, :size, :type, :owner, :path)
             ");
             $insertStatement->execute($fileData);
+            $id = $connection->lastInsertId();
             $connection = null;
-            return true;
+            return ['success'=> true, "id" => $id];
 
         } catch (PDOException $e) {
             http_response_code(500);
             print "Error: " . $e->getMessage();
-            return false;
+            return ['success'=> false];
         }
         
 

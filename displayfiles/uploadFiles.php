@@ -48,7 +48,7 @@
             $fileError = $files['error'][$i];
             $fileType = $files['type'][$i];
             $fileOwner = $_SESSION['user_id'];
-            
+         
             // creates an array with delimeter "."
             $fileExt = explode('.',$fileName);  
             $fileActualExt = strtolower(end($fileExt)); 
@@ -77,9 +77,9 @@
                         ];
 
 
-                        $success = $uploadFileToDatabase->uploadFile($fileData);
+                        $result = $uploadFileToDatabase->uploadFile($fileData);
 
-                        if($success){
+                        if($result["success"]){
 
                             $response[] = array(
                                 'filename' => $fileName,
@@ -88,6 +88,7 @@
                             );
 
                             $data = [
+                                'id' => $result["id"],
                                 'name' => $fileName,
                                 'username' => $fileOwner,
                                 'date' => date('m/d/Y h:i:s', time())
