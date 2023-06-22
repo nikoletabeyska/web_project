@@ -34,8 +34,8 @@ function renderFileList(files, isNew = false) {
         var name = document.createElement("td");
         var link = document.createElement("a");
         console.log(files);
-        link.href = "http://localhost/web_project/singlefile/singlefile.html?file=" + encodeURIComponent(files[i]);
-        console.log("URI :"+ decodeURIComponent(encodeURIComponent(files[i])));
+        link.href = "http://localhost/web_project/singlefile/singlefile.html?file=" + encodeURIComponent(files[i].id);
+        console.log("URI :"+ decodeURIComponent(encodeURIComponent(files[i].id )));
         link.textContent = files[i].name;
         name.appendChild(link);
         row.appendChild(name);

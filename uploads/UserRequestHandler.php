@@ -160,6 +160,7 @@ class UserRequestHandler {
             ");
             $insertStatement->execute($fileData);
             $connection = null;
+            print "Success: ".$fileData['id'].$fileData['name'].$fileData['owner']; 
             return true;
 
         } catch (PDOException $e) {
@@ -175,7 +176,7 @@ class UserRequestHandler {
        
         try{
             $connection = (new Db())->getConnection();
-            $query = "SELECT file.id, file.name, user.username , file.date
+            $query = "SELECT file.name, user.username , file.date
             FROM `files` file
             JOIN `users` user ON file.owner = user.id
             WHERE file.owner = :userId

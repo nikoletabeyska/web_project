@@ -59,16 +59,21 @@
                 if($fileSize < $maxFileSize) {
                     // If a you want to upload file which name already exists - > create unique name -> gets time in microseconds as a number
                     //$fileNewName = uniqid('', true).".".$fileActualExt; 
-                    $fileDestination = '../uploads/'.$fileName; 
+                    $relFileUploadDestination = '../uploads/'.$fileName; 
+                    $fileAbsoluteDestination = 'web_project/uploads/'.$fileName;
 
-                    if(move_uploaded_file($fileTmpName, $fileDestination)) { 
+                    if(move_uploaded_file($fileTmpName, $relFileUploadDestination)) { 
 
+
+        $id = $fileName.$fileOwner;
+        $id= password_hash($id, PASSWORD_DEFAULT);
                         $fileData = [
+                            'id' => $id,
                             'name' => $fileName,
                             'size' => $fileSize,
                             'type' => $fileType,
                             'owner' => $fileOwner,
-                            'path' => $fileDestination,
+                            'path' => $fileAbsoluteDestination,
                         ];
 
 
