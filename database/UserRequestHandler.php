@@ -30,19 +30,17 @@ class UserRequestHandler {
                     // expires after three hours
                     $sessionId=session_id();
                     setcookie('session_id',$sessionId,time()+10800,'/');
-                    echo json_encode(["valid" => true, "message" => "Sucesfull Login".$filteredLoginData['password']]);
-
-    
+                    // echo json_encode(["valid" => true, "message" => "Успешен вход!"]);
+                    // redirecting to uploadPage.html
                 }
                 else{
-                    echo json_encode(["error" => "Грешна парола"]);
-                  
+                    // echo json_encode(["error" => "Грешна парола или потребител!"]);
+                    $errors["all-error"] = "Грешна парола или потребител!";
                 }
             }
             else{
-
-                echo json_encode(["error" => "Грешна потребител"]);
-
+                $errors["all-error"] = "Грешна парола или потребител!";
+                // echo json_encode(["error" => "Грешна парола или потребител!"]);
                 // echo "no such user found here";
             }
             //fininsh the if/else check for correct hased password
@@ -52,7 +50,7 @@ class UserRequestHandler {
         } catch (PDOException $e) {
             http_response_code(500);
             print "Error: " . $e->getMessage();
-            echo json_encode(["error" => "Грешка при вход!"]);
+            // echo json_encode(["error" => "Грешка при вход!"]);
         }
         
     }
@@ -84,10 +82,73 @@ class UserRequestHandler {
         
 
     }
+    public static function validateLoginUserData($userData, &$errors, &$isValid, &$connection){
+        foreach($userData as $key => $value){
+            if(!isset($value) || trim($value) == ''){
+                //errors['name']= ...
+                $errors[$key] = "Полето е задължително!";
+                $isValid = false;  
+            }
+        }
+        if(!$isValid){
+            return;
+        }
+        $filteredLoginData = [
+            'username' => $userData['username'],
+            'password' => $userData['password']
+        ];
+        //Check with the database
+        try{
+            $connection = (new Db())->getConnection();
+            $selectStatement = $connection->prepare("SELECT * FROM `users` WHERE username=?");
+            $selectStatement->execute([$userData['username']]);
+            
+            $user=$selectStatement->fetch();
+
+            if($user){
+                // da proverq dali parolata suvpada s vuvedenata
+                if(password_verify($filteredLoginData['password'],$user['password'])){
+                   
+                    // echo "Welcome, ".$_SESSION['username'];
+                    session_start();
+                    //problemno li e
+                    $_SESSION['user_id']=$user['id'];
+                    $_SESSION['username']=$user['username'];
+
+                    // expires after three hours
+                    $sessionId=session_id();
+                    setcookie('session_id',$sessionId,time()+10800,'/');
+                    $isValid=true;
+                    return;
+                    // redirecting to uploadPage.html
+                }
+                else{
+                    // echo json_encode(["error" => "Грешна парола или потребител!"]);
+                    $errors["all"] = "Грешна парола или потребител!";
+                    $isValid = false;
+                }
+            }
+            else{
+                $errors["all"] = "Грешна парола или потребител!";
+                $isValid = false;
+                // echo json_encode(["error" => "Грешна парола или потребител!"]);
+                // echo "no such user found here";
+            }
+            //fininsh the if/else check for correct hased password
+            
+            // echo json_encode(["valid" => true, "message" => "Sucesfull Login".$filteredLoginData['password']]);
+
+        } catch (PDOException $e) {
+            http_response_code(500);
+            print "Error: " . $e->getMessage();
+            // echo json_encode(["error" => "Грешка при вход!"]);
+        }
+    }
 
     public static function validateUserData($userData, &$errors, &$isValid, &$connection) {
         foreach($userData as $key => $value){
             if(!isset($value) || trim($value) == ''){
+                //errors['name']= ...
                 $errors[$key] = "Полето е задължително!";
                 $isValid = false;
             }
