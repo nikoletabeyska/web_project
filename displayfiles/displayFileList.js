@@ -59,7 +59,3 @@ function renderFileList(files, isNew = false) {
 
 }
 
-
-
-
-// Event handler for checkbox changes
