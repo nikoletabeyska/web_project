@@ -2,8 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var shareButton =  document.getElementById("share-button");
     var windowDiv = document.getElementById('window');
     const noSelected = document.getElementById('noSelected');
+    const input = document.getElementById("inputEmail");
    
     shareButton.addEventListener('click', function() {
+      input.value = "";
+      clearMessages();
       noSelected.textContent = "";
       fileIds = getCheckedFiles();
 
@@ -26,9 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var doneButton = document.getElementById("doneButton");
     doneButton.addEventListener('click', function() {
-        const errorField = document.getElementById('displayError');
-        errorField.textContent = "";
-          givePermissions(fileIds);
+        clearMessages();
+        givePermissions(fileIds);
+  
   });
 
 
@@ -52,18 +55,19 @@ function getCheckedFiles() {
 }
 
 function givePermissions(fileIds){
-  var inputEmail = document.getElementById("inputEmail").value.trim();;
+  var inputEmail = document.getElementById("inputEmail").value.trim();
+
   if(inputEmail === ""){
     const errorField = document.getElementById('displayError');
     errorField.textContent = "Няма въведен имейл!";
     return;
   }
-
-  const regexEmail = /^\S+@\S+.\S+$/;
+  
+  const regexEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 
   if(regexEmail.test(inputEmail)){
-    var data = {'email':inputEmail, 'files':fileIds};
-    request(data);
+      var data = {'email': inputEmail, 'files': fileIds};
+      request(data);
 
   } else {
       const errorField = document.getElementById('displayError');
@@ -103,4 +107,11 @@ function request(data){
       console.log(error);
   });
 
+}
+
+function clearMessages(){
+  const errorField = document.getElementById('displayError');
+  errorField.textContent = "";
+  const successField = document.getElementById('displaySuccess');
+  successField.textContent = "";
 }

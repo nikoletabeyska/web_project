@@ -17,7 +17,7 @@ var deleteBtn = document.getElementById("delete-button");
             console.log("Decoded from URI format:",fileId);
             
             checked.push(fileId);
-            elements.push(el.parentElement);
+            elements.push(el.parentElement.parentElement);
         }
     })
 
