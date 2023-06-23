@@ -47,9 +47,8 @@
             $fileSize = $files['size'][$i];
             $fileError = $files['error'][$i];
             $fileType = $files['type'][$i];
-           // $fileOwner = $_SESSION['user_id'];
+            $fileOwner = $_SESSION['user_id'];
            
-           $fileOwner = 1;
             // creates an array with delimeter "."
             $fileExt = explode('.',$fileName);  
             $fileActualExt = strtolower(end($fileExt)); 
