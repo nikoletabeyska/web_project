@@ -12,7 +12,6 @@ window.onload = (function() {
         inputs.forEach(input => {
             userData[input.name] = input.value;
        });
-       
        sendRequest('http://localhost/web_project/registration/registration.php', userData);
 
     })

@@ -7,7 +7,17 @@ form {
     max-width: 400px;
     margin: 50px auto 0;
     box-shadow: 0 0 16px #222;
-    border-radius: 2px;
+    border-radius: 3px;
+}
+#buttonDiv{
+    display: block;
+    text-align: right;
+}
+#logoutButton{
+    background-color: #ff0000;
+    color:#fff;
+    text-align: center;
+    border-radius: 5px;
 }
 
 .form-container input[type="file"] {
@@ -22,7 +32,7 @@ form {
     background-color: #21a280;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -42,7 +52,7 @@ form {
     width: 300px;
     max-width: 90%;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 5px;
     position: relative;
   }
   .result-popup .close-button {
@@ -89,7 +99,7 @@ form {
       border: none; /* Remove border */
       padding: 8px 16px; /* Padding around the button */
       font-size: 14px; /* Font size */
-      border-radius: 4px; /* Rounded corners */
+      border-radius: 5px; /* Rounded corners */
       cursor: pointer; /* Show pointer cursor on hover */
       float:right;
 }

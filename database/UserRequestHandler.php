@@ -116,8 +116,8 @@ class UserRequestHandler {
                     $_SESSION['username']=$user['username'];
 
                     // expires after three hours
-                    $sessionId=session_id();
-                    setcookie('session_id',$sessionId,time()+10800,'/');
+                    //$sessionId=session_id();
+                    //setcookie('session_id',$sessionId,time()+10800,'/');
                     $isValid=true;
                     return;
                     // redirecting to uploadPage.html

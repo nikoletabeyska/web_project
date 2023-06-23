@@ -9,9 +9,13 @@ function sendRequest(url, userData) {
             },
              body: JSON.stringify(userData)
        })
+       //HTTP Request anatomy:
+       // URL, Header, Body, Cookies, Status
     .then(response => {
         if (response.ok) {
+            //Check is status code of request is 200
             console.log("response ok");
+            // response.json() return body of request 
             return response.json();
         } else {
             console.log("response not ok");
@@ -19,10 +23,11 @@ function sendRequest(url, userData) {
         }
     })
     .then(responseData => {
+        clearErrorMessages();
         if (!responseData.valid) {
-            clearErrorMessages();
             displayErrorMessages(responseData.errors);
         } else {
+            window.location.href="http://localhost/web_project/displayfiles/uploadPage.html";
             displaySuccess(responseData.message);
         }
      })
@@ -34,6 +39,7 @@ function sendRequest(url, userData) {
 
 function clearErrorMessages(){
     const errors = document.getElementsByClassName('error');
+    console.log("clear the errors");
     for(let i = 0; i < errors.length; i++) {
         errors[i].textContent = '';
     }
@@ -43,10 +49,6 @@ function displayErrorMessages(errors) {
     // iterate over the entries of the errors object and perform a callback function for each entry
     for (var key in errors) {
         if (errors.hasOwnProperty(key)) {
-            if(key==="all"){
-
-                continue;
-            }
             const field = key;
             const message = errors[key];
             const errorField = document.getElementById(`${field}-error`);
