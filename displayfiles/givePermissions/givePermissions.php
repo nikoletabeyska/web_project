@@ -13,18 +13,14 @@ if($data){
     if (!preg_match($regexEmail,$data["email"])) {
         echo json_encode(['success' => false, 'error' => "Невалиден имейл!"]);
     }
-    print_r($data);
-    givePermissions($data);
-}
 
-function givePermissions($data)  {
     try{
         $connection = (new Db())->getConnection();
 
-        $selectStatement = $connection->prepare("SELECT id FROM `users` WHERE email = ?");
+        $selectStatement = $connection->prepare("SELECT id,username FROM `users` WHERE email = ?");
         $selectStatement->execute([$data["email"]]);
         $result = $selectStatement->fetch(PDO::FETCH_ASSOC); 
-        print_r($result); 
+        //print_r($result); 
 
         if($selectStatement->fetchAll() > 0) {
             $filteredData = [
@@ -44,6 +40,7 @@ function givePermissions($data)  {
                 $selectStatement->execute($filteredData);
             }
 
+            echo json_encode(['success' => true, "message" => "Успешно дадохте права на потребител ".$result['username']]);
           
         } else {
             echo json_encode(['success' => false, "error" => "Не съществува потребител с такъв имейл!"]);

@@ -79,11 +79,11 @@ function sendRequest(data){
       headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
           },
-           body: JSON.stringify(data)
+      body: JSON.stringify(data)
     })
     .then(response => {
       if (response.ok) {
-          console.log("response ok");
+          //console.log(response.text());
           return response.json();
       } else {
           console.log("response not ok");
@@ -96,7 +96,7 @@ function sendRequest(data){
         errorField.textContent = responseData.error;
       } else {
         const successField = document.getElementById('displaySuccess');
-        successField.textContent;
+        successField.textContent = responseData.message;
       }
    })
   .catch(error => {
