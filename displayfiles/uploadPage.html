@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link href="styles/uploadPage.css" rel="stylesheet">-->
-    <script src="uploadPage.js" defer></script>
     <script src="../database/uploadRequestUtility.js" defer></script>  
+    <script src="uploadPage.js" defer></script>
     <script src="displayFileList.js" defer></script>
     <script src="checkboxAll.js" defer></script>
     <script src="deleteFiles.js" defer></script>
+    <script src="givePermissions/givePermissions.js" defer></script>
+
     <script src="../database/sendRequestUtility.js" defer></script>
     <script src="logout.js" defer></script>
     <link rel="stylesheet" href="uploadFile.css">
@@ -47,6 +49,22 @@
     <table id="file-list-table">
       <input type="checkbox" id="checkAll"> Избери всички</input>
       <button id="delete-button">Изтрий</button>
+      <button id="share-button">Сподели</button>
+      <span id="noSelected" class="error"></span>
+        <!-- <div id="dropdown-options" class="dropdown-content">
+          <a href="#" id="permissions">Other users</a>
+          <a href="#">Generate link</a>
+        </div> -->
+      <div id="window" style="display:none;">
+        <h2>Споделяне</h2>
+        <input type="text" id="inputEmail" placeholder="Add email">
+        <span id="displayError" class="error"></span>
+        <span id="displaySuccess" class="success"></span>
+        <div class="button-container">
+          <button id="doneButton" class="done-button">Дай права</button>
+          <button id="closeButton" class="close-button">Затвори</button>
+        </div>
+      </div>
         <thead>
             <tr>
                 <th></th>

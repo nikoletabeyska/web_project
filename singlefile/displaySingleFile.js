@@ -1,28 +1,136 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var file = "<?php echo $_GET['file']; ?>";
-    var file = file.path;
-    var fileExtension = file.split('.').pop().toLowerCase();
+    const url = new URL(window.location.href); 
+    const pathParam =encodeURIComponent(url.searchParams.get('file'));
+    console.log(url);
+    var link = "http://localhost/web_project/singlefile/displaySingleFile.php?file=" + pathParam;
+        fetch(link)
+            .then(response => response.json())
+            .then(file => displayFileContent(file))
+            .catch(error => console.error("Error:", error));
 
-    switch(fileExtension) {
-        case 'pdf':
+});
+
+function displayFileContent(fileInfo) {
+    console.log(fileInfo);
+    const filePath = fileInfo.path;
+    const fileType = fileInfo.type.toLowerCase();
+    const extension = fileInfo.name.split('.').pop().toLowerCase();
+    fileContents = document.getElementById("file-contents");
+
+    document.getElementById("file-name").textContent = "Име: " + fileInfo["name"];
+    document.getElementById("file-size").textContent = "Размер на файла: " + fileInfo["size"];
+    document.getElementById("file-type").textContent = "Тип: " + fileInfo["type"];
+    document.getElementById("file-update-date").textContent = "Дата на качване: " + fileInfo["date"];
+    document.getElementById("file-owner").textContent = "Собственик: " + fileInfo["owner"];
+
+    switch(fileType) {
+
+        case 'image/jpeg':
+        case 'image/jpg':
+        case 'image/png':
+        case 'image/webp':
+            const imgElement = document.createElement('img');
+            imgElement.src = "http://localhost/"+filePath;
+            fileContents.appendChild(imgElement);
+            imgElement.alt = "Image";
+            break;
+
+        case 'application/pdf':
             console.log("hi");
             var pdfEmbed = document.createElement("embed");
-            pdfEmbed.src = "http://localhost/web_project/src/"+filePath;
+            pdfEmbed.src = "http://localhost/"+filePath;
             pdfEmbed.type = "application/pdf";
-            pdfEmbed.width = "100%";
-            pdfEmbed.height = "800px";
-            document.getElementById("file-contents").appendChild(pdfEmbed);
+            pdfEmbed.width = "50%";
+            pdfEmbed.height = "500px";
+            fileContents.appendChild(pdfEmbed);
             break;
+
+        case 'text/plain':
+            console.log("ji");
+            //const txtElement = document.createElement('p');
+            fetch("http://localhost/"+filePath)
+            .then(response => response.text())
+            .then(textContent => {
+                console.log(textContent);
+              const preElement = document.createElement('pre');
+              preElement.textContent = textContent;
+              fileContents.appendChild(preElement);
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+            break;
+
+        case 'mp3':
+        case 'wav':
+        case 'ogg':
+            // Audio
+            const audioElement = document.createElement('audio');
+            audioElement.controls = true;
+            const audioSourceElement = document.createElement('source');
+            audioSourceElement.src = "http://localhost/" + filePath;;
+            audioSourceElement.type = 'audio/' + extension;
+            audioElement.appendChild(audioSourceElement);
+            fileContents.appendChild(audioElement);
+            break;
+
+        case 'mp4':
+        case 'webm':
+            // Video
+            const videoElement = document.createElement('video');
+            videoElement.controls = true;
+            const videoSourceElement = document.createElement('source');
+            videoSourceElement.src = "http://localhost/" + filePath;
+            videoSourceElement.type = 'video/' + extension;
+            videoElement.appendChild(videoSourceElement);
+            fileContents.appendChild(videoElement);
+            break;
+
+        case 'text/csv':
+
+            fetch("http://localhost/"+filePath)
+            .then(response => response.text())
+            .then(csvData => {
+              // Split the CSV data into rows
+              const rows = csvData.split('\n');
+      
+              // Create the table
+              const tableElement = document.createElement('table');
+      
+              // Create the table rows
+              rows.forEach(rowData => {
+                const tableRow = document.createElement('tr');
+      
+                // Split the row data into cells
+                const cells = rowData.split(';');
+      
+                // Create the table cells
+                cells.forEach(cellData => {
+                  const tableCell = document.createElement('td');
+                  tableCell.textContent = cellData;
+                  tableRow.appendChild(tableCell);
+                });
+      
+                tableElement.appendChild(tableRow);
+              });
+      
+              fileContents.appendChild(tableElement);
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+            break;
+
+      default:
+        const defaultElement = document.createElement('p');
+        defaultElement.textContent = 'This file type is not supported by our website';
+        fileContents.appendChild(defaultElement);
+        break;
     }
 
 
+}
 
 
 
-
-
-
-
-
-});
 

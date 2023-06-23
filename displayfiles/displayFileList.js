@@ -14,8 +14,6 @@ function renderFileList(files, isNew = false) {
         files.sort(function(a, b) {
             var dateA = new Date(a.date);
             var dateB = new Date(b.date);
-            console.log(dateA);
-            console.log(dateB);
             return dateB - dateA; // Sort files in ascending order based on date
           });
     }
@@ -50,7 +48,6 @@ function renderFileList(files, isNew = false) {
         date.textContent = files[i].date;
         row.appendChild(date);
 
-        fileList.appendChild(row);
         if(!isNew){
             fileList.appendChild(row);
 
@@ -62,7 +59,3 @@ function renderFileList(files, isNew = false) {
 
 }
 
-
-
-
-// Event handler for checkbox changes
