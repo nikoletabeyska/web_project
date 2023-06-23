@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-function getCheckedFiles(fileIds){
+function getCheckedFiles() {
   var checkboxes = document.getElementsByName('file-checkbox');
   var fileIds = [];
       checkboxes.forEach((checkbox) =>{
@@ -63,7 +63,7 @@ function givePermissions(fileIds){
 
   if(regexEmail.test(inputEmail)){
     var data = {'email':inputEmail, 'files':fileIds};
-    sendRequest(data);
+    request(data);
 
   } else {
       const errorField = document.getElementById('displayError');
@@ -73,7 +73,7 @@ function givePermissions(fileIds){
 }
 
 
-function sendRequest(data){
+function request(data){
      fetch("http://localhost/web_project/displayfiles/givePermissions/givePermissions.php", {
       method: 'POST',
       headers: {
