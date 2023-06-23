@@ -12,6 +12,9 @@ var deleteBtn = document.getElementById("delete-button");
             var hrefValue = el.getAttribute('href');
             var startIndex = hrefValue.indexOf('file=') + 'file='.length;
             var fileId = hrefValue.substring(startIndex);
+            console.log("Encoded in URI format:", fileId)
+            fileId = decodeURIComponent(fileId);
+            console.log("Decoded from URI format:",fileId);
             
             checked.push(fileId);
             elements.push(el.parentElement);

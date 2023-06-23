@@ -1,9 +1,7 @@
-window.onload=(
-    function logoutOfSession(){
+window.addEventListener("load", function() {
         const logoutButton=document.getElementById("logoutButton");
         logoutButton.addEventListener("click", function(event){
             event.preventDefault();
-            console.log("js");
             fetch("http://localhost/web_project/displayfiles/logoutsession.php",{
                 method:'POST',
                 headers: {
@@ -19,5 +17,4 @@ window.onload=(
             }).catch(error => {console.log(error)});
             // tuk da se izpulni php funkciqta za prekusvane na sesiqta
         });
-    }
-)
+});

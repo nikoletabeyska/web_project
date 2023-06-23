@@ -261,12 +261,18 @@ class UserRequestHandler {
        
         try{
             $connection = (new Db())->getConnection();
+            //Check for ownership before deleting
 
+            
             foreach ($fileIds as $fileId) {
-                $query = "DELETE FROM `files` WHERE id = ?";
+                $query = "DELETE FROM files WHERE id = ?";
                 $selectStatement = $connection->prepare($query);
                 $selectStatement->execute([$fileId]);
+                $selectStatement->fetch();
             }
+            //$query = "DELETE FROM files ";
+            //$selectStatement = $connection->prepare($query);
+            //$selectStatement->execute();
            
             $connection = null;
             return true;

@@ -116,8 +116,8 @@ class UserRequestHandler {
                     $_SESSION['username']=$user['username'];
 
                     // expires after three hours
-                    $sessionId=session_id();
-                    setcookie('session_id',$sessionId,time()+10800,'/');
+                    //$sessionId=session_id();
+                    //setcookie('session_id',$sessionId,time()+10800,'/');
                     $isValid=true;
                     return;
                     // redirecting to uploadPage.html
@@ -208,9 +208,7 @@ class UserRequestHandler {
         return; 
     }
 
-    public function uploadFile($fileData) : bool {
-       
-        
+    public function uploadFile($fileData) {
 
         try{
             $connection = (new Db())->getConnection();
@@ -220,13 +218,14 @@ class UserRequestHandler {
                 VALUE (:id, :name, :size, :type, :owner, :path)
             ");
             $insertStatement->execute($fileData);
+            $id = $connection->lastInsertId();
             $connection = null;
-            return true;
+            return ['success'=> true, "id" => $id];
 
         } catch (PDOException $e) {
             http_response_code(500);
             print "Error: " . $e->getMessage();
-            return false;
+            return ['success'=> false];
         }
         
 
@@ -258,16 +257,22 @@ class UserRequestHandler {
 
     }
 
-    public function deleteFiles($names) : bool {
+    public function deleteFiles($fileIds) : bool {
        
         try{
             $connection = (new Db())->getConnection();
+            //Check for ownership before deleting
 
-            foreach ($names as $name) {
-                $query = "DELETE FROM `files` WHERE name = ?";
+            
+            foreach ($fileIds as $fileId) {
+                $query = "DELETE FROM files WHERE id = ?";
                 $selectStatement = $connection->prepare($query);
-                $selectStatement->execute([$name]);
+                $selectStatement->execute([$fileId]);
+                $selectStatement->fetch();
             }
+            //$query = "DELETE FROM files ";
+            //$selectStatement = $connection->prepare($query);
+            //$selectStatement->execute();
            
             $connection = null;
             return true;
