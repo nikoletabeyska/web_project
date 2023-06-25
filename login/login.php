@@ -10,6 +10,7 @@
     $isValid = true;
     $userData = json_decode(file_get_contents("php://input"), true); 
     if($userData) {
+        
         $userHandler = new UserRequestHandler();
         $userHandler->validateLoginUserData($userData, $errors, $isValid, $connection);
         
@@ -22,6 +23,7 @@
         }
         else
         {
+            session_start();
             echo json_encode(["valid" => true, "message" => "Успешен вход!"]);
         }
 
