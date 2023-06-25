@@ -3,7 +3,7 @@
     require_once '../database/UserRequestHandler.php';
     require_once "../database/Db.php";
     ob_start();
-    session_start();
+    
     // Allow requests from any origin
     header('Access-Control-Allow-Origin: *');
     // Allow the following HTTP methods
@@ -15,6 +15,7 @@
     $isValid = true;
     $userData = json_decode(file_get_contents("php://input"), true); 
     if($userData) {
+        
         $userHandler = new UserRequestHandler();
         $userHandler->validateLoginUserData($userData, $errors, $isValid, $connection);
         
@@ -27,6 +28,7 @@
         }
         else
         {
+            session_start();
             echo json_encode(["valid" => true, "message" => "Успешен вход!"]);
         }
 
