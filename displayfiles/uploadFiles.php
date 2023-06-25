@@ -1,12 +1,7 @@
 <?php
     
    require_once '../database/UserRequestHandler.php';
-   // Allow requests from any origin
-   header('Access-Control-Allow-Origin: *');
-   // Allow the following HTTP methods
-   header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
-   // Allow the following headers
-   header('Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Authorization');
+   require_once '../helpers/headers.php';
 
     $targetDir = "../uploads/";
     date_default_timezone_set("Europe/Sofia");

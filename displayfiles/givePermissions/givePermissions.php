@@ -1,10 +1,9 @@
 <?php
 
 require_once '../../database/Db.php';
+require_once '../../helpers/headers.php';
+
 session_start();
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
-header('Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Authorization');
 
 $data = json_decode(file_get_contents("php://input"), true); 
 
@@ -24,12 +23,9 @@ if($data){
             $result = $selectStatement->fetch(PDO::FETCH_ASSOC); 
             $filteredData = [
                 'file_id' => "",
-                'granted_by' => 1,//$_SESSION['user_id'],
+                'granted_by' => $_SESSION['user_id'],
                 'granted_to' => $result['id']
             ];
-            print_r($filteredData['file_id']);
-            print_r($filteredData['granted_by']);
-            print_r($filteredData['granted_by']);
             $files = $data["files"];
 
             foreach ($files as $file){
