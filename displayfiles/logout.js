@@ -13,7 +13,7 @@ window.addEventListener("load", function() {
             .then(response => {return response.json()})
             .then(responseJson => {
                 console.log(responseJson);
-                window.location.href = "http://localhost/web_project/mainpage/mainpage.html";
+                window.location.href = "http://localhost/web_project/mainpage/mainpage.php";
             }).catch(error => {console.log(error)});
             // tuk da se izpulni php funkciqta za prekusvane na sesiqta
         });

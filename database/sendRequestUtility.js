@@ -27,7 +27,7 @@ function sendRequest(url, userData) {
         if (!responseData.valid) {
             displayErrorMessages(responseData.errors);
         } else {
-            window.location.href="http://localhost/web_project/displayfiles/uploadPage.html";
+            window.location.href="http://localhost/web_project/displayfiles/uploadPage.php";
             displaySuccess(responseData.message);
         }
      })

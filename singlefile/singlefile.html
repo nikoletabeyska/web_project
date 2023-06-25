@@ -5,8 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>Преглед на файл</title>
-        <script src="singlefiledownload.js" defer></script>
+        
         <script src="../database/sendRequestUtility.js" defer></script>
+        <script src="singlefiledownload.js" defer></script>
+        <script src="shareLink.js" defer></script>
         <script src="displaySingleFile.js" defer></script>
         <link rel="stylesheet" href="singlefile.css">
     </head>
@@ -26,9 +28,10 @@
         </div>
         <div>
             <button id="downloadButton" >Изтегли</button>
+            <button id="shareThroughLink" onclick="shareLink()">Сподели чрез линк</button>
         </div>
         <div>
-            <a href="" id="shareButton"></a>
+            <a href="" id="shareButton" style="visibility: hidden;"></a>
         </div>
     </body>
 </html>

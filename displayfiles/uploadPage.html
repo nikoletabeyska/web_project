@@ -10,8 +10,10 @@
     <script src="checkboxAll.js" defer></script>
     <script src="deleteFiles.js" defer></script>
     <script src="givePermissions/givePermissions.js" defer></script>
+    
 
     <script src="../database/sendRequestUtility.js" defer></script>
+    <script src="greetings.js" defer></script>
     <script src="logout.js" defer></script>
     <link rel="stylesheet" href="uploadFile.css">
     <title>Upload page</title>
@@ -19,6 +21,10 @@
 <body>
 <div id="buttonDiv">
   <button id="logoutButton">Изход</button>
+</div>
+<div>
+  <p id="userInfo">Здравей!</p> 
+  <!-- <p id="userInfo"></p> -->
 </div>
 <!-- The data encoding type, enctype, MUST be specified as below -->
 <form enctype="multipart/form-data"  method="POST" class="form-container">

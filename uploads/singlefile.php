@@ -1,15 +1,14 @@
 <?php
     require_once "../database/Db.php";
-$fileId = $_GET['file'];
+$file = $_GET['file'];
             $connection = (new Db())->getConnection();
             $selectStatement = $connection->prepare("SELECT path , name, size FROM `files` WHERE id=?");
-            $selectStatement->execute([$fileId]);
+            $selectStatement->execute([$file]);
             $fileinfo=$selectStatement->fetch(PDO::FETCH_ASSOC);
 // Initialize a file URL to the variable
 //if fileinfo is false
     $url ="http://localhost/".$fileinfo['path'];
-    // echo $url;
-    // echo $file;
+    //echo $url;
     ob_start();
     //echo $fileinfo['path'];
     $file_name = $fileinfo['name'];
@@ -29,5 +28,5 @@ header('Pragma: public');
 header('Content-Length: '. $fileinfo['size']);
 ob_end_clean();
 readfile($url);
-exit();
+die();
 ?>

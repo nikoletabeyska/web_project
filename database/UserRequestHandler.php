@@ -4,56 +4,56 @@ require_once 'Db.php';
 
 class UserRequestHandler {
 
-    public static function loginUser($loginData){
-        $filteredLoginData = [
-            'username' => $loginData['username'],
-            'password' => $loginData['password']
-        ];
-        //Check with the database
-        try{
-            $connection = (new Db())->getConnection();
-            $selectStatement = $connection->prepare("SELECT * FROM `users` WHERE username=?");
-            $selectStatement->execute([$loginData['username']]);
+    // public static function loginUser($loginData){
+    //     $filteredLoginData = [
+    //         'username' => $loginData['username'],
+    //         'password' => $loginData['password']
+    //     ];
+    //     //Check with the database
+    //     try{
+    //         $connection = (new Db())->getConnection();
+    //         $selectStatement = $connection->prepare("SELECT * FROM `users` WHERE username=?");
+    //         $selectStatement->execute([$loginData['username']]);
             
-            $user=$selectStatement->fetch();
+    //         $user=$selectStatement->fetch();
 
-            if($user){
-                // da proverq dali parolata suvpada s vuvedenata
-                if(password_verify($filteredLoginData['password'],$user['password'])){
+    //         if($user){
+    //             // da proverq dali parolata suvpada s vuvedenata
+    //             if(password_verify($filteredLoginData['password'],$user['password'])){
                    
-                    // echo "Welcome, ".$_SESSION['username'];
-                    session_start();
-                    //problemno li e
-                    $_SESSION['user_id']=$user['id'];
-                    $_SESSION['username']=$user['username'];
+    //                 // echo "Welcome, ".$_SESSION['username'];
+    //                 session_start();
+    //                 //problemno li e
+    //                 $_SESSION['user_id']=$user['id'];
+    //                 $_SESSION['username']=$user['username'];
 
-                    // expires after three hours
-                    $sessionId=session_id();
-                    setcookie('session_id',$sessionId,time()+10800,'/');
-                    // echo json_encode(["valid" => true, "message" => "Успешен вход!"]);
-                    // redirecting to uploadPage.html
-                }
-                else{
-                    // echo json_encode(["error" => "Грешна парола или потребител!"]);
-                    $errors["all-error"] = "Грешна парола или потребител!";
-                }
-            }
-            else{
-                $errors["all-error"] = "Грешна парола или потребител!";
-                // echo json_encode(["error" => "Грешна парола или потребител!"]);
-                // echo "no such user found here";
-            }
-            //fininsh the if/else check for correct hased password
+    //                 // expires after three hours
+    //                 $sessionId=session_id();
+    //                 setcookie('session_id',$sessionId,time()+10800,'/');
+    //                 // echo json_encode(["valid" => true, "message" => "Успешен вход!"]);
+    //                 // redirecting to uploadPage.html
+    //             }
+    //             else{
+    //                 // echo json_encode(["error" => "Грешна парола или потребител!"]);
+    //                 $errors["all-error"] = "Грешна парола или потребител!";
+    //             }
+    //         }
+    //         else{
+    //             $errors["all-error"] = "Грешна парола или потребител!";
+    //             // echo json_encode(["error" => "Грешна парола или потребител!"]);
+    //             // echo "no such user found here";
+    //         }
+    //         //fininsh the if/else check for correct hased password
             
-            // echo json_encode(["valid" => true, "message" => "Sucesfull Login".$filteredLoginData['password']]);
+    //         // echo json_encode(["valid" => true, "message" => "Sucesfull Login".$filteredLoginData['password']]);
 
-        } catch (PDOException $e) {
-            http_response_code(500);
-            print "Error: " . $e->getMessage();
-            // echo json_encode(["error" => "Грешка при вход!"]);
-        }
+    //     } catch (PDOException $e) {
+    //         http_response_code(500);
+    //         print "Error: " . $e->getMessage();
+    //         // echo json_encode(["error" => "Грешка при вход!"]);
+    //     }
         
-    }
+    // }
 
     public static function createUser($userData) {
         $filteredData = [
@@ -72,6 +72,7 @@ class UserRequestHandler {
             ");
 
             $insertStatement->execute($filteredData);
+            session_start();
             echo json_encode(["valid" => true, "message" => "Регистрацията е успешна!"]);
 
         } catch (PDOException $e) {

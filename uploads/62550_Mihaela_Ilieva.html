@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Домашно CSS</title>
+        <link href="62550_Mihaela_Ilieva.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <form method="POST" id="registerForm">
+            <div name="usernameBox">
+                <input type="text" name="username" required placeholder="Потребителско име" class="full-width"/>
+            </div>
+            <div name="passwordBox">
+                <input type="password" name="password" required placeholder="Парола" class="full-width"/>
+            </div>
+            <div name="telephoneBox">
+                <input type="tel" name="telephone" required placeholder="Телефон" class="full-width"/>
+            </div>
+            <div name="emailBox">
+                <input type="email" name="email" required placeholder="Имейл адрес" class="full-width"/>
+            </div>
+            <select name="types" class="full-width" id="selectBar">
+                    <option value="1" selected>Собственик</option>
+                    <option value="2">Наемател</option>
+                    <option value="3">Друго</option>
+            </select>
+            <div name="apartmentNumberBox">
+                <input type="number" min="1" name="aptNumber" required placeholder="Номер на апартамента" class="full-width"/>
+            </div>
+            <button name="registerButton" class="full-width">Регистрирай ме!</button>
+        </form>
+    </body>
+</html>
