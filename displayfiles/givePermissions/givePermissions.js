@@ -47,6 +47,7 @@ function getCheckedFiles() {
               var hrefValue = el.getAttribute('href');
               var startIndex = hrefValue.indexOf('file=') + 'file='.length;
               var fileId = hrefValue.substring(startIndex);
+              fileId=decodeURIComponent(fileId);
 
               fileIds.push(fileId);
           }

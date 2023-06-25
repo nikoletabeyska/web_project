@@ -1,0 +1,219 @@
+body{
+    background-color:#104d3b;
+}
+form {
+    background: #fff;
+    padding: 60px 60px 30px;
+    max-width: 400px;
+    margin: 50px auto 0;
+    box-shadow: 0 0 16px #222;
+    border-radius: 3px;
+}
+#buttonDiv{
+    display: block;
+    text-align: right;
+}
+#logoutButton{
+    background-color: #6c0808;
+    color:#fff;
+    text-align: center;
+    border-radius: 5px;
+}
+#logoutButton:hover{
+  background-color: #630000;
+}
+
+.form-container input[type="file"] {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.form-container button {
+    display: inline-block;
+    padding: 5px 20px;
+    background-color: #104d3b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container .result {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.container{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.result-popup {
+    background-color: #fff;
+    width: 300px;
+    max-width: 90%;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+  }
+  .result-popup .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  .result-popup h3 {
+    margin-top: 0;
+  }
+
+
+  table {
+      width: 100%;
+      border-collapse: collapse;
+  }
+  
+  th, td {
+      padding: 10px;
+      text-align: left;
+  }
+  
+  thead {
+      background-color: #f2f2f2;
+  }
+  
+  th {
+      font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+      background-color: #f9f9f9;
+  }
+  /* tr:nth-child(even):hover{
+    background-color: #104d3b;
+  } */
+  
+  tr:hover {
+      background-color: #b6c8c0;
+  }
+
+
+#delete-button {
+      background-color: #6c0808; /* Background color */
+      color: #ffffff; /* Text color */
+      border: none; /* Remove border */
+      padding: 8px 16px; /* Padding around the button */
+      font-size: 15px; /* Font size */
+      border-radius: 5px; /* Rounded corners */
+      cursor: pointer; /* Show pointer cursor on hover */
+      float:right;
+}
+
+    /* Hover effect */
+#delete-button:hover {
+      background-color: #630000; /* Change background color on hover */
+}
+
+#share-button {
+    background-color: #1d608e;
+    color: white;
+    padding: 8px 16px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    float:right;
+  }
+  
+  #share-button:hover, #share-button:focus {
+    background-color: #154667;
+  }
+  
+  #window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 185px;
+    background: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 10px 10px 10px;
+    z-index: 9999;
+    text-align:center;
+  }
+  
+  #window.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   /* backdrop-filter: blur(4px);/*/
+    place-items: center;
+    padding: 10px 10px;
+    background: rgba(254, 252, 252);
+  }
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .done-button {
+    background-color: #2c8f2c;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    margin: auto 
+
+  }
+  .close-button {
+    background-color: #6c0808;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    margin: auto 
+
+  }
+
+  .done-button:hover, .done-button:focus {
+    background-color: #489a22;
+  }
+
+  .close-button:hover, .close-button:focus {
+    background-color: #630000;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+ #searchBox {
+    margin: auto;
+ }
+
+ #searchResults{
+    list-style: none; padding: 0;
+ }
+ p{
+  font-size: 300%;
+  /* font-weight: bold; */
+ }
+
+ a{
+  color:black;
+  text-decoration: none;
+ }
+ a:link, a:visited, a:hover{
+  color:black;
+ }
+ button{
+  margin:3px;
+  font-size: 15px;
+  border: none; /* Remove border */
+  padding: 8px 16px;
+  cursor:pointer;
+ }

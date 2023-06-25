@@ -1,7 +1,7 @@
 <?php
 
 require_once '../../database/Db.php';
-
+session_start();
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
 header('Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Authorization');
@@ -27,7 +27,9 @@ if($data){
                 'granted_by' => $_SESSION['user_id'],
                 'granted_to' => $result['id']
             ];
-
+            print_r($filteredData['file_id']);
+            print_r($filteredData['granted_by']);
+            print_r($filteredData['granted_by']);
             $files = $data["files"];
 
             foreach ($files as $file){
@@ -55,4 +57,3 @@ if($data){
     }
 
 }
-
