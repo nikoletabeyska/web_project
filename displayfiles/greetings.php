@@ -1,6 +1,7 @@
 <?php
 require_once "../database/Db.php";
 
+session_start();
 try{
     $connection = (new Db())->getConnection();
                 

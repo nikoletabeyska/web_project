@@ -1,45 +1,42 @@
 body {
-    background-color: #466f46;
+    background-color: #073629;
     font-family: 'PT Sans', sans-serif;
     font-size: 10px;
     text-align: center;
     overflow: hidden;
     color:white;
-    
 }
 form{
-    width:300px;
-    display: block;
+    width:350px;
     text-align: center;   
-    margin:20% 30%;
-    padding: 16px 16px;
-    font-size: 50px;
-    background-color: #466f46;
+    margin:21% 35%;
+    padding: 4px 4px;
+    font-size: 55px;
+    background-color: #073629;
 }
 button{
     font-size: large;
     background-color: #3e7b59;
-    width:89%;
-    height:35px;
+    width:129%;
+    height:50px;
     border-radius: 10px;
     text-align: center;
+    box-shadow: 3px 3px black;
 }
 span{
     display: block;
     font-size: 15px;
     color:red;
-    text-align: center;
+    text-align:center;
+    width:125%;
 }
 input{
+    display: block;
     font-size: 35px;
     background-color: rgb(193, 220, 198);
+    margin:3%;
+    border: 3px rgb(31, 35, 32) solid;
 }
-
-/* h2 {
-    margin:0 0 50px 0;
-    padding:10px;
-    text-align:center;
-    font-size:30px;
-    color:darken(#e5e5e5, 50%);
-    border-bottom:solid 1px #e5e5e5;
-} */
+div{
+    text-align: center;
+}

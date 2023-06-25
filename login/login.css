@@ -1,5 +1,5 @@
 body {
-    background-color: #2c372c;
+    background-color: #073629;
     font-family: 'PT Sans', sans-serif;
     font-size: 10px;
     text-align: center;
@@ -13,7 +13,7 @@ form{
     margin:21% auto;
     padding: 16px 16px;
     font-size: 50px;
-    background-color: #2c372c;
+    background-color: #073629;
 }
 button{
     font-size: large;
@@ -21,6 +21,7 @@ button{
     width:89%;
     height:35px;
     border-radius: 10px;
+    box-shadow: 3px 3px black;
 }
 span{
     display: block;
@@ -30,4 +31,5 @@ span{
 input{
     font-size: 35px;
     background-color: rgb(193, 220, 198);
+    border: 3px rgb(31, 35, 32) solid;
 }

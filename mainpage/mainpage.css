@@ -4,7 +4,7 @@ body{
     background-repeat: no-repeat;
     background-position:center;
     background-size: cover;
-    background-color: #466f46;
+    background-color: #073629;
     margin-top: 23%;
     margin-bottom: 23%;
     color:white;
@@ -19,6 +19,7 @@ a:hover, a:link, a:visited{
     color:black;
 }
 button{
+    font-size: large;
     background-color: rgb(245, 129, 12);
     margin-top: 0%;
     border-radius: 10px;

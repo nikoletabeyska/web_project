@@ -72,7 +72,7 @@ class UserRequestHandler {
             ");
 
             $insertStatement->execute($filteredData);
-            session_start();
+            //session_start();
             echo json_encode(["valid" => true, "message" => "Регистрацията е успешна!"]);
 
         } catch (PDOException $e) {
