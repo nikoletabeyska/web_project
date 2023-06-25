@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Асоциирания URI за XML SCHEMA-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="catalog">
+        <!--Каталогът е сбор от битки-->
+        <xs:complexType>
+        <xs:sequence>
+    <!--Битките може да са колкото си поискаме като бройка-->
+            <xs:element name="battle" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                                        
+                    <xs:sequence>
+                        <xs:element name="image">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:string">
+                                        <xs:attribute name="href" use="optional" type="xs:string"/>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="conflict">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="name" type="xs:string"/>
+                                    <xs:element name="period" type="xs:string"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="cause" type="xs:string"/>
+                        <xs:element name="triggering_event" type="xs:string"/>
+                        <xs:element name="location" type="xs:string"/>
+                        <xs:element name="start">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <!--Да сложа дейт тайп на датата-->
+                                    <xs:element name="date" type="xs:date" minOccurs="0" maxOccurs="1"/>
+                                    <xs:element name="time" type="xs:time" minOccurs="0" maxOccurs="1"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="course_of_events">
+                            <xs:complexType>
+                            <!--Да видя дали може без този sequence-->
+                                <xs:sequence>
+                                    <xs:element name="list">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="item" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="date" type="xs:date" minOccurs="0" maxOccurs="1"/>
+                                                            <xs:element name="event" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>                  
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="end">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="date" type="xs:date" minOccurs="0" maxOccurs="1"/>
+                                    <xs:element name="time" type="xs:time" minOccurs="0" maxOccurs="1"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="result">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="winner" type="xs:string"/>
+                                    <xs:element name="list" minOccurs="1" maxOccurs="1">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                            <!--Колко минимум и максимум сбития да сложим-->
+                                                <xs:element name="event" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+                          					</xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="fighting_force" minOccurs="2" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="name" type="xs:string"/>
+                                    <xs:element name="fighting_type" type="xs:string"/>
+                                    <xs:element name="military_leader" type="xs:string"/>
+       
+                                    <xs:element name="allies">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                              <xs:element name="list">
+                                                	<xs:complexType>
+                                                      <xs:sequence>
+                                                <xs:element name="item" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+                                            			</xs:sequence>
+                                                      </xs:complexType>
+                                                </xs:element>
+                                                      
+                                                      </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="power">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                            <!--Да оправя атрибута-->
+                                                <xs:element name="soldiers">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="list" minOccurs="1" maxOccurs="1">
+                                                              <xs:complexType>
+                                                                <xs:sequence>
+                                                                <xs:element name="item" minOccurs="0" maxOccurs="unbounded">
+                                                                  <xs:complexType>
+                                                                	<xs:sequence>
+                                                                    <xs:element name="type" type="xs:string"/>
+                                                                    <xs:element name="count" type="xs:string"/>
+                                                                   	</xs:sequence>
+                                                                </xs:complexType>
+                                                                </xs:element>
+                                                                  </xs:sequence>
+                                                                </xs:complexType>
+                                                            </xs:element>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="weapons">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="list" minOccurs="1" maxOccurs="1">
+                                                                <xs:complexType>
+                                                                    <xs:sequence>
+                                                                        <xs:element name="item" minOccurs="0" maxOccurs="unbounded">
+                                                                            <xs:complexType>
+                                                                              <xs:sequence>
+                                                                                <xs:element name="type" type="xs:string"/>
+                                                                                <xs:element name="count" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                                                                </xs:sequence>
+                                                                            </xs:complexType>
+                                                                        </xs:element>
+                                                                    </xs:sequence>
+                                                                </xs:complexType>
+                                                            </xs:element>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="fleet">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="list" minOccurs="1" maxOccurs="1">
+                                                                <xs:complexType>
+                                                                    <xs:sequence>
+                                                                        <xs:element name="item" minOccurs="0" maxOccurs="unbounded">
+                                                                            <xs:complexType>
+                                                                                <xs:sequence>
+                                                                                    <xs:element name="type" type="xs:string"/>
+                                                                                    <xs:element name="count" type="xs:string"/>
+                                                                                </xs:sequence>
+                                                                            </xs:complexType>
+                                                                        </xs:element>
+                                                                    </xs:sequence>
+                                                                </xs:complexType>
+                                                            </xs:element>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>                            
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="losses">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                          <!--За някои битки има информация само за някои от изброените, затова всички са между нула и много-->
+                                            <xs:element name="killed" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                            <xs:element name="enslaved" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                            <xs:element name="wounded" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                            <xs:element name="captured" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                           </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="name" use="optional" type="xs:string"/>
+                    <xs:attribute name="type" use="optional" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -21,14 +21,16 @@ table {
   }
 
   .container {
-    display:flex;
-    /* align-items: flex-start; */
+    display:block;
+   /* align-items: flex-start; */
     /* border: 1px solid #ccc; */
     padding: 10px;
+    font-size: smaller;
+    /* flex-shrink: 0; */
   }
   
   .information {
-    flex: 1;
+    /* flex: 1; */
     margin-right: 20px;
     background-color: #ededed;
     text-align: left;
@@ -36,13 +38,15 @@ table {
     margin-top: 60px;
     padding: 30px 15px 50px;
     box-shadow: 0 2px 4px rgba(24, 24, 24, 0.7);
+    display: block;
   }
   
   .content {
-    flex: 2;
+    /* flex: 1; */
     background-color: #eef3f6;
     padding: 20px 20px 10px 10px;
     margin-left: 20px;
+    display: block;
   }
   
   img {
@@ -69,9 +73,11 @@ table {
     font-style: italic;
     border-bottom: 3px black solid;
   }
-  .content{
+  .content, #file-contents{
     border-left: 3px black solid;
     border-right: 3px black solid;
+    flex-shrink: 0;
+    max-width: 1%;
   }
   #shareButton{
     color:black;
