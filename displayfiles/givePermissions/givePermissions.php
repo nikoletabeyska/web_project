@@ -19,13 +19,12 @@ if($data){
 
         $selectStatement = $connection->prepare("SELECT id,username FROM `users` WHERE email = ?");
         $selectStatement->execute([$data["email"]]);
-        $result = $selectStatement->fetch(PDO::FETCH_ASSOC); 
-        //print_r($result); 
 
-        if($selectStatement->fetchAll() > 0) {
+        if($selectStatement->rowCount() > 0) {
+            $result = $selectStatement->fetch(PDO::FETCH_ASSOC); 
             $filteredData = [
                 'file_id' => "",
-                'granted_by' => 1, //$_SESSION['user_id'],
+                'granted_by' => $_SESSION['user_id'],
                 'granted_to' => $result['id']
             ];
 
