@@ -4,7 +4,6 @@
     require_once "../database/Db.php";
     require_once "../helpers/headers.php";
     ob_start();
-    session_start();
 
     $errors = [];
     $isValid = true;

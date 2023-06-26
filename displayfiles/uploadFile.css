@@ -1,11 +1,11 @@
 body{
-  background: #82be8d; 
+  background: #156d52; 
 }
 form {
   background: #ccf1d9; 
     padding: 60px 60px 30px;
     max-width: 400px;
-    margin: 10px auto 0;
+    margin: 50px auto 0;
     box-shadow: 0 0 16px #222;
     border-radius: 3px;
 }
@@ -14,14 +14,14 @@ form {
     text-align: right;
 }
 #logoutButton{
-    background-color: #ff0000;
+    background-color: #6c0808;
     color:#fff;
     text-align: center;
     border-radius: 5px;
 }
 
 #logoutButton:hover{
-  background-color: #960303;
+  background-color: #630000;
 }
 
 .form-container input[type="file"] {
@@ -33,7 +33,7 @@ form {
 .form-container button {
     display: inline-block;
     padding: 5px 20px;
-    background-color: #21a280;
+    background-color: #156d52;
     color: white;
     border: none;
     border-radius: 5px;
@@ -93,7 +93,7 @@ form {
   }
   
   tr:hover {
-      background-color: #ebebeb;
+      background-color: #b6c8c0;
   }
 
 .container1 {
@@ -111,11 +111,11 @@ form {
 
 
 #delete-button {
-      background-color: #ff0000; /* Background color */
+      background-color: #6c0808; /* Background color */
       color: #ffffff; /* Text color */
       border: none; /* Remove border */
       padding: 8px 16px; /* Padding around the button */
-      font-size: 14px; /* Font size */
+      font-size: 15px; /* Font size */
       border-radius: 5px; /* Rounded corners */
       cursor: pointer; /* Show pointer cursor on hover */
       float:right;
@@ -123,14 +123,14 @@ form {
 
     /* Hover effect */
 #delete-button:hover {
-      background-color: #cc0000; /* Change background color on hover */
+      background-color: #630000; /* Change background color on hover */
 }
 
 #share-button {
-    background-color: #4d92c0;
+    background-color: #1d608e;
     color: white;
     padding: 8px 16px;
-    font-size: 14px;
+    font-size: 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -139,7 +139,7 @@ form {
   }
   
   #share-button:hover, #share-button:focus {
-    background-color: #0c71b5;
+    background-color:#154667;
   }
 
   #noSelected {
@@ -153,17 +153,30 @@ form {
   /* font-weight: bold; */
  }
 
- a{
-  color:black;
-  text-decoration: none;
- }
- a:link, a:visited, a:hover{
-  color:black;
- }
- button{
-  margin:3px;
-  font-size: 15px;
-  border: none; /* Remove border */
+ .close-button {
+  background-color: #6c0808;
+  color: #ffffff;
   padding: 8px 16px;
-  cursor:pointer;
- }
+  border: none;
+}
+.close-button:hover, .close-button:focus {
+  background-color: #630000;
+}
+h2 {
+font-size: 300%;
+/* font-weight: bold; */
+}
+a{
+color:black;
+text-decoration: none;
+}
+a:link, a:visited, a:hover{
+color:black;
+}
+button{
+margin:3px;
+font-size: 15px;
+border: none; /* Remove border */
+padding: 8px 16px;
+cursor:pointer;
+}

@@ -115,7 +115,8 @@ class UserRequestHandler {
                     //problemno li e
                     $_SESSION['user_id']=$user['id'];
                     $_SESSION['username']=$user['username'];
-
+                    session_write_close();
+                    
                     // expires after three hours
                     //$sessionId=session_id();
                     //setcookie('session_id',$sessionId,time()+10800,'/');

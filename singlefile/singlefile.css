@@ -1,5 +1,5 @@
 body{
-  background: #82be8d; 
+  background: #156d52; 
 }
 
 table {
@@ -21,16 +21,15 @@ table {
   }
 
   .container {
-    display:block;
+    display:flex;
    /* align-items: flex-start; */
     /* border: 1px solid #ccc; */
     padding: 10px;
-    font-size: smaller;
     /* flex-shrink: 0; */
   }
   
   .information {
-    /* flex: 1; */
+    flex: 1;
     margin-right: 20px;
     background-color: #ededed;
     text-align: left;
@@ -38,15 +37,13 @@ table {
     margin-top: 60px;
     padding: 30px 15px 50px;
     box-shadow: 0 2px 4px rgba(24, 24, 24, 0.7);
-    display: block;
   }
   
   .content {
-    /* flex: 1; */
+    flex: 2;
     background-color: #eef3f6;
     padding: 20px 20px 10px 10px;
     margin-left: 20px;
-    display: block;
   }
   
   img {
@@ -59,7 +56,7 @@ table {
   }
 
   button{
-    margin:5px;
+  margin:5px;
   font-size: 15px;
   border: none; /* Remove border */
   padding: 8px 16px;
@@ -73,12 +70,12 @@ table {
     font-style: italic;
     border-bottom: 3px black solid;
   }
-  .content, #file-contents{
+  /* .content, #file-contents{
     border-left: 3px black solid;
     border-right: 3px black solid;
     flex-shrink: 0;
     max-width: 1%;
-  }
+  } */
   #shareButton{
     color:black;
     margin-top:50px;
