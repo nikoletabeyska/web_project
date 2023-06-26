@@ -8,7 +8,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
-    height: 160px;
+    height: 180px;
     background: #f2f2f2;
     border: 1px solid #ccc;
     z-index: 9999;
@@ -31,7 +31,7 @@
   .button-container {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 30px;
   }
   
   .done-button {
