@@ -36,12 +36,12 @@ function displayFileContent(fileInfo) {
             break;
 
         case 'application/pdf':
-            console.log("hi");
             var pdfEmbed = document.createElement("embed");
             pdfEmbed.src = "http://localhost/"+filePath;
             pdfEmbed.type = "application/pdf";
-            pdfEmbed.width = "50%";
-            pdfEmbed.height = "500px";
+            pdfEmbed.width = "100%";
+            pdfEmbed.height = "100%";
+            //pdfEmbed.height = "500px";
             fileContents.appendChild(pdfEmbed);
             break;
 
@@ -121,13 +121,6 @@ function displayFileContent(fileInfo) {
               console.error('Error:', error);
             });
             break;
-            // case 'image/svg+xml':
-            // case'image/avif':
-            //   const svgElement = document.createElement('svg');
-            //   svgElement.src = "http://localhost/"+filePath;
-            //   fileContents.appendChild(svgElement);
-            //   svgElement.alt = "Image";
-            //   break;
               case 'text/html':
               case 'text/css':
               case 'text/javascript':
