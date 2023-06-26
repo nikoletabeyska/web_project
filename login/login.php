@@ -15,14 +15,13 @@
         
         ob_end_clean();
         if(!$isValid) {
-            //$userHandler->loginUser($userData);
             echo json_encode(['valid' => false, 'errors' => $errors]); 
                        
             exit();
         }
         else
         {
-            session_start();
+           session_start();
             echo json_encode(["valid" => true, "message" => "Успешен вход!"]);
         }
 
