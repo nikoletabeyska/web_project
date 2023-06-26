@@ -2,7 +2,7 @@ window.addEventListener("load", function() {
         const logoutButton=document.getElementById("logoutButton");
         logoutButton.addEventListener("click", function(event){
             event.preventDefault();
-            fetch("http://localhost/web_project/displayfiles/logoutsession.php",{
+            fetch("http://localhost/web_project/logout/logoutsession.php",{
                 method:'POST',
                 headers: {
                     //'Content-Type': 'application/x-www-form-urlencoded'

@@ -4,7 +4,7 @@
     require_once "../database/Db.php";
     require_once "../helpers/headers.php";
     ob_start();
-
+    
     $errors = [];
     $isValid = true;
     $userData = json_decode(file_get_contents("php://input"), true); 

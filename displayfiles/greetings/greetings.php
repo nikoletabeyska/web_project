@@ -1,5 +1,5 @@
 <?php
-require_once "../database/Db.php";
+require_once "../../database/Db.php";
 
 session_start();
 try{

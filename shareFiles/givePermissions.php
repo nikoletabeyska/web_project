@@ -1,7 +1,7 @@
 <?php
 
-require_once '../../database/Db.php';
-require_once '../../helpers/headers.php';
+require_once '../database/Db.php';
+require_once '../helpers/headers.php';
 
 session_start();
 

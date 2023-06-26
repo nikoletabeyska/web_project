@@ -1,9 +1,10 @@
 <?php
     
-   require_once '../database/UserRequestHandler.php';
-   require_once '../helpers/headers.php';
+   require_once '../../database/UserRequestHandler.php';
+   require_once '../../helpers/headers.php';
 
-    $targetDir = "../uploads/";
+
+    $targetDir = "../../uploads/";
     date_default_timezone_set("Europe/Sofia");
     
     // Create the directory if it doesn't exist
@@ -57,7 +58,7 @@
                 if($fileSize < $maxFileSize) {
                     // If a you want to upload file which name already exists - > create unique name -> gets time in microseconds as a number
                     //$fileNewName = uniqid('', true).".".$fileActualExt; 
-                    $relFileUploadDestination = '../uploads/'.$fileName; 
+                    $relFileUploadDestination = '../../uploads/'.$fileName; 
                     $fileAbsoluteDestination = 'web_project/uploads/'.$fileName;
 
                     if(move_uploaded_file($fileTmpName, $relFileUploadDestination)) { 
