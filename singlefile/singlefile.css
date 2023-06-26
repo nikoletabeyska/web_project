@@ -45,12 +45,19 @@ table {
     padding: 20px 20px 10px 10px;
     margin-left: 20px;
   }
+
+  #file-contents{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    height:70vh;
+  }
   
   img {
     max-width: 100%;
-    height: auto;
+    height: 80%;
     display: block;
-    margin: 0 auto;
+    margin: 10px auto;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -85,3 +92,7 @@ table {
     color:black;
     text-decoration: none;
   }
+  h1{
+    color:white;
+  }
+

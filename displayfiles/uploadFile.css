@@ -1,33 +1,43 @@
 body{
-  background: #156d52; 
+  background:  #09694e;
 }
 form {
   background: #ccf1d9; 
     padding: 60px 60px 30px;
     max-width: 400px;
-    margin: 50px auto 0;
+    margin: 20px auto 0;
     box-shadow: 0 0 16px #222;
     border-radius: 3px;
+    margin-bottom: 60px;
 }
 #buttonDiv{
     display: block;
     text-align: right;
 }
 #logoutButton{
-    background-color: #6c0808;
+    background-color: #d7263dde;
     color:#fff;
     text-align: center;
     border-radius: 5px;
 }
 
 #logoutButton:hover{
-  background-color: #630000;
+  background-color: #8d1b1b;
 }
 
 .form-container input[type="file"] {
     display: inline-block;
     margin-top: 10px;
     margin-bottom: 20px;
+}
+
+#textCheckAll {
+  color:white;
+  font-size: 17px;
+}
+#checkAll {
+  width: 17px;
+  height: 17px;
 }
 
 .form-container button {
@@ -51,28 +61,10 @@ form {
     margin-right: 20px;
 }
 
-.result-popup {
-    background-color: #fff;
-    width: 300px;
-    max-width: 90%;
-    padding: 20px;
-    border-radius: 5px;
-    position: relative;
-  }
-  .result-popup .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-  }
-  .result-popup h3 {
-    margin-top: 0;
-  }
-
-
   table {
       width: 100%;
       border-collapse: collapse;
+      background-color:#0e966d; ;
   }
   
   th, td {
@@ -93,7 +85,7 @@ form {
   }
   
   tr:hover {
-      background-color: #b6c8c0;
+      background-color: #dadedc;
   }
 
 .container1 {
@@ -111,7 +103,7 @@ form {
 
 
 #delete-button {
-      background-color: #6c0808; /* Background color */
+      background-color:#d7263dde; /* Background color */
       color: #ffffff; /* Text color */
       border: none; /* Remove border */
       padding: 8px 16px; /* Padding around the button */
@@ -123,11 +115,11 @@ form {
 
     /* Hover effect */
 #delete-button:hover {
-      background-color: #630000; /* Change background color on hover */
+      background-color: #920000; /* Change background color on hover */
 }
 
 #share-button {
-    background-color: #1d608e;
+    background-color: #31b793;
     color: white;
     padding: 8px 16px;
     font-size: 15px;
@@ -139,22 +131,24 @@ form {
   }
   
   #share-button:hover, #share-button:focus {
-    background-color:#154667;
+    background-color:#1c7a74;
   }
 
   #noSelected {
     padding: 5px;
     margin-right: auto;
+    color: white;
   }
   
  p{
   margin-top:10px;
   font-size: 300%;
+  color:#ffffff;
   /* font-weight: bold; */
  }
 
  .close-button {
-  background-color: #6c0808;
+  background-color: #b91212;
   color: #ffffff;
   padding: 8px 16px;
   border: none;
@@ -163,20 +157,36 @@ form {
   background-color: #630000;
 }
 h2 {
-font-size: 300%;
+  font-size: 300%;
+  color:#ffffff;
 /* font-weight: bold; */
 }
+
 a{
-color:black;
-text-decoration: none;
+  color:black;
+  text-decoration: none;
 }
+
 a:link, a:visited, a:hover{
-color:black;
+  color:black;
 }
+
 button{
-margin:3px;
-font-size: 15px;
-border: none; /* Remove border */
-padding: 8px 16px;
-cursor:pointer;
+  margin:3px;
+  font-size: 15px;
+  border: none; /* Remove border */
+  padding: 8px 16px;
+  cursor:pointer;
+}
+
+h1 {
+  font-size: 200%;
+  color:#ffffff;
+  /* font-weight: bold; */
+}
+
+#userInfo{
+  margin-top: 0px;
+  margin-left:20px;
+  margin-bottom:0px;
 }

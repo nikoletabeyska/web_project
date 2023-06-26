@@ -1,42 +1,87 @@
 body {
-    background-color: #073629;
+    background-color: #09694e;
     font-family: 'PT Sans', sans-serif;
     font-size: 10px;
     text-align: center;
-    overflow: hidden;
     color:white;
+
 }
-form{
-    width:350px;
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh; /* occupy full height of viewport */
+}
+.form-container form{
+
+    max-width: 480px; 
+    width:80%;
+    height: auto;
+    display: block;
     text-align: center;   
-    margin:21% 35%;
-    padding: 4px 4px;
-    font-size: 55px;
-    background-color: #073629;
+    margin: 0 auto;
+    padding: 16px;
+    margin-bottom:10px;
+    font-size: 30px;
+    background-color:#7fb090;
+    border: 1px solid #032711;
+    box-shadow: 0 0 16px #222;
+    border-radius: px;
 }
 button{
     font-size: large;
     background-color: #3e7b59;
-    width:129%;
-    height:50px;
+    width: 70%;
+    height:35px;
     border-radius: 10px;
-    text-align: center;
+    text-size-adjust: 16px;
+    text-emphasis-color: white;
     box-shadow: 3px 3px black;
+    color:white;
+    font-style:bold;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color:  #2b4a39;
 }
 span{
+    margin-top:5px;
+    margin-bottom:5px;
     display: block;
     font-size: 15px;
-    color:red;
-    text-align:center;
-    width:125%;
+    font-style: bold;
+    color:rgb(173 32 32);
 }
 input{
-    display: block;
-    font-size: 35px;
+    font-size: 20px;
     background-color: rgb(193, 220, 198);
-    margin:3%;
-    border: 3px rgb(31, 35, 32) solid;
+    border: 1px rgb(31, 35, 32) solid;
+    font-size: 20px;
+    background-color: rgb(193, 220, 198);
+    height: 20px; 
+    padding: 5px; 
 }
-div{
-    text-align: center;
+
+.form-container .full-width {
+    width: 80%;
+    height: 5%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top:5px;
+    margin-bottom:5px;
+    overflow-y: auto;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+#all-error{
+    margin-top:15px;
 }

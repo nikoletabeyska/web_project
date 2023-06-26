@@ -26,15 +26,16 @@
     place-items: center;
     padding: 10px 30px 30px 30px;
     background: rgba(254, 252, 252);
+    height:auto;
   }
 
-  .button-container {
+  #window.show .button-container {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 10px;
   }
   
-  .done-button {
+   .done-button {
     background-color: #21a280;
     color: #ffffff;
     padding: 8px 16px;
@@ -61,8 +62,10 @@
   }
 
   h2 {
+    font-size:20px;
     text-align: center;
     margin-bottom: 20px;
+    color:#222;
   }
 
  #searchBox {
@@ -72,3 +75,5 @@
  #searchResults{
     list-style: none; padding: 0;
  }
+
+

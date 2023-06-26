@@ -9,15 +9,15 @@
         <title>Login</title>
     </head>
     <body>
-        <form method="POST" id="login-form">
-            <span id="all-errors" class="error"></span>
+        <div class="form-container">
+            <h1>Вход</h1>
+            <form method="POST" id="login-form">
+                <span id="all-errors" class="error"></span>
+                <div>
+                    <input type="text" id="username" name ="username" required placeholder="Потребителско име" class="full-width">
+                    <span id="username-error" class="error"></span>
+                </div>
             <div>
-                <!-- <label for="username">Потребителско Име:</label> -->
-                <input type="text" id="username" name ="username" required placeholder="Потребителско Име" class="full-width">
-                <span id="username-error" class="error"></span>
-            </div>
-            <div>
-                <!-- <label for="password">Парола:</label> -->
                 <input type="password" id="password" name ="password" required placeholder="Парола" class="full-width">
                 <span id="password-error" class="error"></span>
             </div>
@@ -30,6 +30,6 @@
             </div>
                 <p id="success"></p>
         </form>
-        
+    </div>
     </body>
 </html>
