@@ -12,4 +12,4 @@ if (ini_get("session.use_cookies")) {
 } 
 session_destroy();
 //setcookie('session_id','',time-10800,'/');
-            echo json_encode(["message" => "php"]);
+echo json_encode(["message" => "php"]);

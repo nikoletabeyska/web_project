@@ -24,9 +24,10 @@
         $countFiles = count($_FILES['files']['name']);
         $originalCount = $countFiles;
 
-        if($countFiles > 20) {
+        $maxFileCountAllowed=20;
+        if($countFiles > $maxFileCountAllowed) {
             $countInfo['error'] = 'Превишен лимит на брой избрани файлове! Лимитът е 20 файла!';
-            $countFiles = 20;
+            $countFiles = $maxFileCountAllowed;
         }
         
         
@@ -47,7 +48,9 @@
             // creates an array with delimeter "."
             $fileExt = explode('.',$fileName);  
             $fileActualExt = strtolower(end($fileExt)); 
-            $maxFileSize = 40 * 1024 * 1024;
+            $maxMBForFileAllowed=40;
+            $coeficientForMakingFileSizeBigger=1024;
+            $maxFileSize = $maxMBForFileAllowed * $coeficientForMakingFileSizeBigger * $coeficientForMakingFileSizeBigger;
 
             if($fileError === 0) {
 

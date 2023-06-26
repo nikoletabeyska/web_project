@@ -1,17 +1,19 @@
 <?php
    require_once "../database/Db.php";
    function format_size($bytes){
-        
-        if ($bytes >= 1048576) {
-            $bytes = number_format($bytes / 1048576, 2) . ' MB';
+        $coeficientForMB=1048576;
+        $coeficientForKB=1024;
+        $coeficientForBytes=1;
+        if ($bytes >= $coeficientForMB) {
+            $bytes = number_format($bytes / $coeficientForMB, 2) . ' MB';
         }
-        elseif ($bytes >= 1024) {
-            $bytes = number_format($bytes / 1024, 2) . ' KB';
+        elseif ($bytes >= $coeficientForKB) {
+            $bytes = number_format($bytes / $coeficientForKB, 2) . ' KB';
         }
-        elseif ($bytes > 1) {
+        elseif ($bytes > $coeficientForBytes) {
             $bytes = $bytes . ' bytes';
         }
-        elseif ($bytes == 1) {
+        elseif ($bytes == $coeficientForBytes) {
             $bytes = $bytes . ' byte';
         }
         else {
