@@ -29,6 +29,7 @@ function displayFileContent(fileInfo) {
         case 'image/jpg':
         case 'image/png':
         case 'image/webp':
+        case 'image/avif':
             const imgElement = document.createElement('img');
             imgElement.src = "http://localhost/"+filePath;
             fileContents.appendChild(imgElement);
@@ -121,10 +122,12 @@ function displayFileContent(fileInfo) {
               console.error('Error:', error);
             });
             break;
+
               case 'text/html':
               case 'text/css':
               case 'text/javascript':
               case 'text/xml':
+              case 'application/json':
               case 'application/xml':
               case 'application/octet-stream':
               fetch("http://localhost/"+filePath)
@@ -139,6 +142,7 @@ function displayFileContent(fileInfo) {
                 console.error('Error:', error);
               });
               break;
+
               case 'image/gif':
             const gifElement = document.createElement('img');
             gifElement.src = "http://localhost/"+filePath;
@@ -146,6 +150,7 @@ function displayFileContent(fileInfo) {
             gifElement.style.height="100%";
             fileContents.appendChild(gifElement);
             break;
+
             case 'video/mp4':
             case 'video/webm':
                   const vidElement = document.createElement('video');
