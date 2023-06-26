@@ -57,6 +57,7 @@ INSERT INTO `files` (`id`, `name`, `size`, `type`, `date`, `owner`, `path`) VALU
 ('$2y$10$/0UuvOQ8rmDYk6y93xiYsOahhUttmO3209NnrQAikhqK0UkEwNI3K', 'User.php', 1030, 'application/octet-stream', '2023-06-25 01:09:46', 5, 'web_project/uploads/User.php'),
 ('$2y$10$1qv38WujGtC3fzO/tpYXr.1j5HQFG9zbO3GWljhgGFBIrjxh4ycIi', 'My recording 8.mp3', 122654, 'audio/mpeg', '2023-06-25 15:15:34', 5, 'web_project/uploads/My recording 8.mp3'),
 ('$2y$10$2ziMrQRc/DhCaMBLPbhPgO596rPTELB1qsQ0SZeftUbnlEppVc8Ly', 'uploadPage.html', 3265, 'text/html', '2023-06-25 15:07:07', 6, 'web_project/uploads/uploadPage.html'),
+('$2y$10$6kq.JDsVJ2jzRodBwLGJKeyAw54irXa.ewD2GnNwYB4HKFwgnQSyS', 'IzbiraemiDisciplini.xlsx', 11087, 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', '2023-06-25 16:17:45', 5, 'web_project/uploads/IzbiraemiDisciplini.xlsx'),
 ('$2y$10$6lKeV0npbyKnXzPN4Kkk4.H6zrpWXyaSpoiLyXzvvp4/J9kS1.E..', 'programming.gif', 7546, 'image/gif', '2023-06-25 15:11:55', 5, 'web_project/uploads/programming.gif'),
 ('$2y$10$AiDk3TahpiRN4Blp0Nw1sOq75QlOEpvwU.9MKeAnkYVXl1CGbg8qK', 'Untitled-1.xsd', 14055, 'application/xml', '2023-06-25 15:44:49', 5, 'web_project/uploads/Untitled-1.xsd'),
 ('$2y$10$B6Vsw1xuOOPJJ34F94C/M.MrQf7sPYHMxhbKKnRm1FOpObsVUuty6', 'output.json', 59, 'application/json', '2023-06-25 03:35:37', 5, 'web_project/uploads/output.json'),
@@ -79,6 +80,7 @@ INSERT INTO `files` (`id`, `name`, `size`, `type`, `date`, `owner`, `path`) VALU
 ('$2y$10$QNJ5Fko8ZdG1N4lI6CRIxuxHoB844lpcQQztGq3rQAA7mJqNZRuQq', 'Trying to see if it will work.docx', 12076, 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', '2023-06-25 15:37:13', 5, 'web_project/uploads/Trying to see if it will work.docx'),
 ('$2y$10$rJ8/beAUaCOVWG1Dz1Jvd.nBXUnF5.WC/pzDck.XovDNU.8gPY5e6', 'dump.sql', 8575, 'application/octet-stream', '2023-06-25 15:50:34', 5, 'web_project/uploads/dump.sql'),
 ('$2y$10$RkD9g3lyAqFKxl1Uv1PEK.NZ6nKAIvJ.iA8lP/LKejfhxu7I0F6Xi', '62550_Mihaela_Ilieva.html', 1594, 'text/html', '2023-06-25 02:20:45', 5, 'web_project/uploads/62550_Mihaela_Ilieva.html'),
+('$2y$10$sN.Ta87Of0zqqCUtMz8eK.W9hH/CPGD7Mx74x7hoexGf2YgQk2Tv6', 'HW3_Mihaela_Ilieva_62550.php', 469, 'application/octet-stream', '2023-06-26 03:23:58', 5, 'web_project/uploads/HW3_Mihaela_Ilieva_62550.php'),
 ('$2y$10$Uk2PJipVnAT56ni4zMgsN.eeS13IIWgtGRMdJqwB4KTCAtpabMRxW', 'displaySingleFile.php', 1148, 'application/octet-stream', '2023-06-25 03:45:58', 5, 'web_project/uploads/displaySingleFile.php'),
 ('$2y$10$uqzpADy3mtYQbSf1PUxcleoiZmiw8JirmyjfoG1GdoYKIoT77Rj2u', 'displaySingleFile.php', 1148, 'application/octet-stream', '2023-06-25 03:30:53', 5, 'web_project/uploads/displaySingleFile.php'),
 ('$2y$10$uU4PngvlfHL8HaZhUZeiXurGugYE6j3ytsHBRp0hCe5RC87T6Geta', '20230427_174424.m4a', 84310, 'audio/x-m4a', '2023-06-25 15:15:34', 5, 'web_project/uploads/20230427_174424.m4a'),
@@ -86,6 +88,7 @@ INSERT INTO `files` (`id`, `name`, `size`, `type`, `date`, `owner`, `path`) VALU
 ('$2y$10$VA0RwufOp4UzG58Cu1A97eyG2LNREzOWAyanrMmslCLySoiHgOQ4i', 'project_xslt.xsl', 2281, 'text/xml', '2023-06-25 15:44:49', 5, 'web_project/uploads/project_xslt.xsl'),
 ('$2y$10$xhfSZevnSTUcr/1dixEjeudZyJBFupxGl9GcZJg3EYM5VpvDLHVvK', 'Referat_Posledno_Opravqne.pdf', 479085, 'application/pdf', '2023-06-25 01:21:33', 5, 'web_project/uploads/Referat_Posledno_Opravqne.pdf'),
 ('$2y$10$yK9x9Ry3D8467K12uEEYnen6fr88K0jNWTfih9dPLVg62AfiHWiHW', 'dump.sql', 3616, 'application/octet-stream', '2023-06-25 03:23:58', 5, 'web_project/uploads/dump.sql'),
+('$2y$10$yPH8ipAZP7utfe4NjN.4Me1cUtA9IqD39yGfacqy28qmOoPIZh6lS', 'IzbiraemiDisciplini.xlsx', 11087, 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', '2023-06-27 00:11:18', 5, 'web_project/uploads/IzbiraemiDisciplini.xlsx'),
 ('$2y$10$zIeBjOEglC/TjjTuTTPbKuL9kfsnnKB1tTlAqYdKANAQkePchK8sa', 'zad1.xml', 718, 'text/xml', '2023-06-25 15:44:57', 5, 'web_project/uploads/zad1.xml');
 UNLOCK TABLES;
 

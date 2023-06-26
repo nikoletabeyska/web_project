@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Filemeup</title>
+        <script src="mainpage.js" defer></script>
         <link rel="stylesheet" href="mainpage.css">
     </head>
     <body>
@@ -11,11 +12,11 @@
         <h3>Your place for sharing files</h3>
         <div id="new-user">
             <h6>Тук сте за първи път?</h6>
-            <button><a href="http://localhost/web_project/registration/registrationpage.php">Регистрация</a></button>
+            <button onclick="registration()">Регистрация</button>
         </div>
         <div id="new-user">
             <h6>Вече имате профил?</h6>
-            <button><a href="http://localhost/web_project/login/loginpage.php">Вход</a></button>
+            <button onclick="login()">Вход</button>
         </div>
     </body>
 </html>
