@@ -4,17 +4,7 @@
     require_once "../database/Db.php";
     require_once "../helpers/headers.php";
     ob_start();
-<<<<<<< HEAD
     session_start();
-=======
-    
-    // Allow requests from any origin
-    header('Access-Control-Allow-Origin: *');
-    // Allow the following HTTP methods
-    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
-    // Allow the following headers
-    header('Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Authorization');
->>>>>>> 37acd5cc38a139a6be9a48c8901f0ea000db2c65
 
     $errors = [];
     $isValid = true;
