@@ -21,7 +21,7 @@ function displayFileContent(fileInfo) {
     document.getElementById("file-size").textContent = "Размер на файла: " + fileInfo["size"];
     document.getElementById("file-type").textContent = "Тип: " + fileInfo["type"];
     document.getElementById("file-update-date").textContent = "Дата на качване: " + fileInfo["date"];
-    document.getElementById("file-owner").textContent = "Собственик: " + fileInfo["owner"];
+    document.getElementById("file-owner").textContent = "Собственик: " + fileInfo["username"];
 
     switch(fileType) {
 

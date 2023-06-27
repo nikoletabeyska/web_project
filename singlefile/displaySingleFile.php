@@ -1,5 +1,6 @@
 <?php
    require_once "../database/Db.php";
+ 
    function format_size($bytes){
         $coeficientForMB=1048576;
         $coeficientForKB=1024;
@@ -28,7 +29,10 @@
     try{
         $connection = (new Db())->getConnection();
                 
-        $selectStatement = $connection->prepare("SELECT path ,name, size, type, date, owner FROM `files` WHERE id=?");
+        $selectStatement = $connection->prepare("SELECT f.path, f.name, f.size, f.type, u.username, f.date
+                                                    FROM files f
+                                                    JOIN users u ON f.owner = u.id
+                                                    WHERE f.id = ?");
         $selectStatement->execute([$file]);
         $fileInfo=$selectStatement->fetch(PDO::FETCH_ASSOC);
         $fileInfo['size'] = format_size($fileInfo['size']);
