@@ -11,9 +11,10 @@ window.addEventListener("load", function () {
       var resultsContainer = document.getElementById('overflow');
       var results = document.getElementById('result');
       results.textContent = "";
-      if(count > 20){
+      const maxCountForFiles=20;
+      if(count > maxCountForFiles){
         resultsContainer.innerText = "Превишен лимит на брой избрани файлове! Лимитът е 20 файла!";
-        count = 20;
+        count = maxCountForFiles;
       } else {
         resultsContainer.innerText = "";
       }
