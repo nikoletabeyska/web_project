@@ -94,11 +94,11 @@ UNLOCK TABLES;
 
 -- Table structure for table `permissions`
 CREATE TABLE `permissions` (
-  `permision_id` int(255) NOT NULL AUTO_INCREMENT,
+  `permission_id` int(255) NOT NULL AUTO_INCREMENT,
   `file_id` varchar(255) NOT NULL,
   `granted_by` int(255) NOT NULL,
   `granted_to` int(255) NOT NULL,
-  PRIMARY KEY (`permision_id`),
+  PRIMARY KEY (`permission_id`),
   KEY `permision_FK_1` (`file_id`),
   KEY `permissions_FK_2` (`granted_by`),
   KEY `permissions_FK_3` (`granted_to`),
@@ -108,7 +108,7 @@ CREATE TABLE `permissions` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 LOCK TABLES `permissions` WRITE;
-INSERT INTO `permissions` (`permision_id`, `file_id`, `granted_by`, `granted_to`) VALUES
+INSERT INTO `permissions` (`permission_id`, `file_id`, `granted_by`, `granted_to`) VALUES
 (3, '$2y$10$L2KyMyvT7at7JJnmPGThf.pI6lFV.OxGq9B6sapsUGTKSw5abGKMO', 5, 2),
 (4, '$2y$10$2ziMrQRc/DhCaMBLPbhPgO596rPTELB1qsQ0SZeftUbnlEppVc8Ly', 6, 5);
 UNLOCK TABLES;
