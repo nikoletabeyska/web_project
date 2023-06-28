@@ -3,7 +3,6 @@
    require_once '../../database/UserRequestHandler.php';
    require_once '../../helpers/headers.php';
 
-
     $targetDir = "../../uploads/";
     date_default_timezone_set("Europe/Sofia");
     
@@ -49,13 +48,13 @@
             // creates an array with delimeter "."
             $fileExt = explode('.',$fileName);  
             $fileActualExt = strtolower(end($fileExt)); 
-            $maxMBForFileAllowed=40;
+            $maxMBForFileAllowed=30;
             $coeficientForMakingFileSizeBigger=1024;
             $maxFileSize = $maxMBForFileAllowed * $coeficientForMakingFileSizeBigger * $coeficientForMakingFileSizeBigger;
 
             if($fileError === 0) {
 
-                if($fileSize < $maxFileSize) {
+                if($fileSize <= $maxFileSize) {
                     // If a you want to upload file which name already exists - > create unique name -> gets time in microseconds as a number
                     //$fileNewName = uniqid('', true).".".$fileActualExt; 
                     $relFileUploadDestination = '../../uploads/'.$fileName; 
@@ -114,11 +113,11 @@
                     //header("Location: index.php?uploadsuccess");
 
                 } else {
-                    echo "Файлът е прекалено голям!";
+                    //echo "Файлът е прекалено голям!";
                     $response[] = array(
                         'filename' => $fileName,
                         'success' => false,
-                        'message' => 'Грешка при качването на файла! Размерът на файла трябва да е под 40 MB!'
+                        'message' => 'Грешка при качването на файла! Размерът на файла трябва да е под 30 MB!'
                     );
                 }
 

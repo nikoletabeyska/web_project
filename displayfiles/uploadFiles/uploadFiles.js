@@ -8,11 +8,14 @@ window.addEventListener("load", function () {
       var uploadContent = document.getElementById('uploadContent');
       var files = uploadContent.files;
       var count = files.length;
-
+      var resultsContainer = document.getElementById('overflow');
+      var results = document.getElementById('result');
+      results.textContent = "";
       if(count > 20){
-        var resultsContainer = document.getElementById('result')
-        resultsContainer.textContent = "Превишен лимит на брой избрани файлове! Лимитът е 20 файла!";
+        resultsContainer.innerText = "Превишен лимит на брой избрани файлове! Лимитът е 20 файла!";
         count = 20;
+      } else {
+        resultsContainer.innerText = "";
       }
 
       //Create a new FormData object
