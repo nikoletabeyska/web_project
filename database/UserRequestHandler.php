@@ -221,7 +221,7 @@ class UserRequestHandler {
             ");
             $insertStatement->execute($fileData);
             $id = $connection->lastInsertId();
-            $connection = null;
+            //$connection = null;
             return ['success'=> true, "id" => $id];
 
         } catch (PDOException $e) {

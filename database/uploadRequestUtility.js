@@ -23,7 +23,7 @@ function uploadRequest(url,userData) {
 
 function clearMessages(){
     const message = document.getElementById('result');
-    result.textContent = '';
+    message.textContent = '';
 }
 
 function displayUploadResult(data) {
@@ -31,18 +31,19 @@ function displayUploadResult(data) {
     var resultsContainer = document.getElementById('result');
     var countInfo = data.countInfo;
 
+
     if(countInfo.hasOwnProperty('noFiles')){
         resultsContainer.textContent = countInfo['noFiles'];
     } else if(countInfo.hasOwnProperty('error')){
         resultsContainer.textContent = countInfo['error'];
-        resultsContainer.innerText += "\n" + countInfo['success'];
+        resultsContainer.innerText += "\n" + countInfo['success']+"\n";
     } else {
         resultsContainer.textContent = countInfo['success'];
     }
 
     var responseData = data.response;
     var successful = [];
-            
+    var j=0;
     for (var i = 0; i < responseData.length; i++) {
 
             var fileName = responseData[i].filename;
@@ -55,20 +56,13 @@ function displayUploadResult(data) {
             console.log(devMessage);
 
             if(isSuccess){
-              successful.push(data.fileDataCollection[i]);
+              successful.push(data.fileDataCollection[j]);
+              j++;
             }
 
             if (!isSuccess) {
-                var resultElement = document.createElement('div');
-                resultElement.classList.add('result');
-                resultElement.classList.add('error');
-                // Create and append file name element
-                var fileError = document.createElement('p');
-                fileError.textContent = 'Файл: ' + fileName + " Грешка:" + message;
-                resultElement.appendChild(fileError);
-          
-                // Append the result element to the container
-                resultsContainer.appendChild(resultElement);
+                var resultElement = document.getElementById('result');
+                resultElement.innerText += "\n"+ 'Файл: ' + fileName +"\n"+ message;
             }
     }
     // Update table after uploading every file 
