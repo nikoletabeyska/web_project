@@ -8,9 +8,10 @@ window.addEventListener("load",function() {
         // window.open('singlefile.php?path'+ pathParam + '_blank');
  //      sendRequest("http://localhost/web_project/singlefile/singlefile.php?file="+pathParam,[] );
         console.log("here:",pathParam);
-        window.location = "http://localhost/web_project/singlefile/singlefile.php?file=" + pathParam;
+        window.location = "../singlefile/singlefile.php?file=" + pathParam;
     })
+    var absolutePathn= new URL("../singlefile/singlefile.php?file=", document.baseURI).href;
     var shareLink = document.getElementById("shareButton");
-    shareLink.href = "http://localhost/web_project/singlefile/singlefile.php?file=" + pathParam;
-    shareLink.textContent = "http://localhost/web_project/singlefile/singlefile.php?file=" + pathParam;
+    shareLink.href = absolutePathn + pathParam;
+    shareLink.textContent = absolutePathn + pathParam;
 })

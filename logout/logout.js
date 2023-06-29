@@ -2,7 +2,7 @@ window.addEventListener("load", function() {
         const logoutButton=document.getElementById("logoutButton");
         logoutButton.addEventListener("click", function(event){
             event.preventDefault();
-            fetch("http://localhost/web_project/logout/logoutsession.php",{
+            fetch("../logout/logoutsession.php",{
                 method:'POST',
                 headers: {
                     //'Content-Type': 'application/x-www-form-urlencoded'
@@ -13,7 +13,7 @@ window.addEventListener("load", function() {
             .then(response => {return response.json()})
             .then(responseJson => {
                 console.log(responseJson);
-                window.location.href = "http://localhost/web_project/mainpage/mainpage.php";
+                window.location.href = "../mainpage/mainpage.php";
             }).catch(error => {console.log(error)});
             // tuk da se izpulni php funkciqta za prekusvane na sesiqta
         });

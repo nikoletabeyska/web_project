@@ -7,7 +7,7 @@ $fileId = $_GET['file'];
             $fileinfo=$selectStatement->fetch(PDO::FETCH_ASSOC);
 // Initialize a file URL to the variable
 //if fileinfo is false
-    $url ="http://localhost/".$fileinfo['path'];
+    $url =$GLOBALS['userPathFromLocalhost'].$fileinfo['path'];
     // echo $url;
     // echo $file;
     ob_start();

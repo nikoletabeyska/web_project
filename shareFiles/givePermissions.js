@@ -79,7 +79,7 @@ function givePermissions(fileIds){
 
 
 function request(data){
-     fetch("http://localhost/web_project/shareFiles/givePermissions.php", {
+     fetch("../sharefiles/givePermissions.php", {
       method: 'POST',
       headers: {
           'Content-Type': 'application/x-www-form-urlencoded'

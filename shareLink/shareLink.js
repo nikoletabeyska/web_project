@@ -3,14 +3,17 @@ window.addEventListener("load",function() {
     const url = new URL(window.location.href);
     const pathParam = encodeURIComponent(url.searchParams.get('file'));
 
+
+    var absolutePath= new URL("../shareLink/shareLink.php?file=", document.baseURI).href;
     var shareViewLink = document.getElementById("shareViewButton");
-    shareViewLink.href = "http://localhost/web_project/shareLink/shareLink.php?file=" + pathParam;
-    shareViewLink.textContent = "http://localhost/web_project/shareLink/shareLink.php?file=" + pathParam;
+    shareViewLink.href = absolutePath + pathParam;
+    shareViewLink.textContent = absolutePath + pathParam;
+
 
     const copyButton = document.getElementById('copyLink');
 
     copyButton.addEventListener('click', function() {
-      const viewableLink = "http://localhost/web_project/shareLink/shareLink.php?file=" + pathParam; // Replace with the actual viewable link
+      const viewableLink = absolutePath + pathParam; // Replace with the actual viewable link
   
       const tempInput = document.createElement('input');
       tempInput.value = viewableLink;

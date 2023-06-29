@@ -2,7 +2,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const url = new URL(window.location.href); 
     const pathParam =encodeURIComponent(url.searchParams.get('file'));
     console.log(url);
-    var link = "http://localhost/web_project/singlefile/displaySingleFile.php?file=" + pathParam;
+    // var subFolders=<?php
+    // require_once '../database/Db.php';
+    // echo "$userPathFromLocalhost";
+    // ?>;
+    var link = "../singlefile/displaySingleFile.php?file=" + pathParam;
         fetch(link)
             .then(response => response.json())
             .then(file => displayFileContent(file))
@@ -31,14 +35,14 @@ function displayFileContent(fileInfo) {
         case 'image/webp':
         case 'image/avif':
             const imgElement = document.createElement('img');
-            imgElement.src = "http://localhost/"+filePath;
+            imgElement.src = globalpath+filePath;
             fileContents.appendChild(imgElement);
             imgElement.alt = "Image";
             break;
 
         case 'application/pdf':
             var pdfEmbed = document.createElement("embed");
-            pdfEmbed.src = "http://localhost/"+filePath;
+            pdfEmbed.src = globalpath+filePath;
             pdfEmbed.type = "application/pdf";
             pdfEmbed.width = "100%";
             pdfEmbed.height = "100%";
@@ -49,7 +53,7 @@ function displayFileContent(fileInfo) {
         case 'text/plain':
             console.log("ji");
             //const txtElement = document.createElement('p');
-            fetch("http://localhost/"+filePath)
+            fetch(globalpath+filePath)
             .then(response => response.text())
             .then(textContent => {
                 console.log(textContent);
@@ -70,7 +74,7 @@ function displayFileContent(fileInfo) {
             const audioElement = document.createElement('audio');
             audioElement.controls = true;
             const audioSourceElement = document.createElement('source');
-            audioSourceElement.src = "http://localhost/" + filePath;;
+            audioSourceElement.src = globalpath+filePath;;
             audioSourceElement.type = 'audio/' + extension;
             audioElement.appendChild(audioSourceElement);
             fileContents.appendChild(audioElement);
@@ -90,7 +94,7 @@ function displayFileContent(fileInfo) {
 
         case 'text/csv':
 
-            fetch("http://localhost/"+filePath)
+            fetch(globalpath+filePath)
             .then(response => response.text())
             .then(csvData => {
               // Split the CSV data into rows
@@ -130,7 +134,8 @@ function displayFileContent(fileInfo) {
               case 'application/json':
               case 'application/xml':
               case 'application/octet-stream':
-              fetch("http://localhost/"+filePath)
+              
+              fetch(globalpath+filePath)
               .then(response => response.text())
               .then(textContent => {
                 console.log(textContent);
@@ -145,7 +150,7 @@ function displayFileContent(fileInfo) {
 
               case 'image/gif':
             const gifElement = document.createElement('img');
-            gifElement.src = "http://localhost/"+filePath;
+            gifElement.src = globalpath+filePath;
             gifElement.style.width="100%";
             gifElement.style.height="100%";
             fileContents.appendChild(gifElement);
@@ -156,7 +161,7 @@ function displayFileContent(fileInfo) {
                   const vidElement = document.createElement('video');
                   vidElement.controls = true;
                   const vidSourceElement = document.createElement('source');
-                  vidSourceElement.src = "http://localhost/" + filePath;
+                  vidSourceElement.src = globalpath+filePath;
                   vidSourceElement.type = 'video/' + extension;
                   vidElement.appendChild(vidSourceElement);
                   fileContents.appendChild(vidElement);

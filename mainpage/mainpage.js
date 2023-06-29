@@ -1,6 +1,6 @@
 function registration(){
-    window.location.href="http://localhost/web_project/registration/registrationpage.php";
+    window.location.href="../registration/registrationpage.php";
 }
 function login(){
-    window.location.href="http://localhost/web_project/login/loginpage.php";
+    window.location.href="../login/loginpage.php";
 }

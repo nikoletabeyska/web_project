@@ -1,6 +1,6 @@
 window.addEventListener("load", function() {
     const userInfo=document.getElementById("userInfo");
-        fetch("http://localhost/web_project/displayfiles/greetings/greetings.php",{
+        fetch("greetings/greetings.php",{
             method:'POST',
             headers: {
                 //'Content-Type': 'application/x-www-form-urlencoded'

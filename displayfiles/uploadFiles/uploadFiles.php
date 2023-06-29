@@ -2,7 +2,9 @@
     
    require_once '../../database/UserRequestHandler.php';
    require_once '../../helpers/headers.php';
+   require_once '../../database/Db.php';
 
+   ob_start();
     $targetDir = "../../uploads/";
     date_default_timezone_set("Europe/Sofia");
     
@@ -58,7 +60,7 @@
                     // If a you want to upload file which name already exists - > create unique name -> gets time in microseconds as a number
                     //$fileNewName = uniqid('', true).".".$fileActualExt; 
                     $relFileUploadDestination = '../../uploads/'.$fileName; 
-                    $fileAbsoluteDestination = 'web_project/uploads/'.$fileName;
+                    $fileAbsoluteDestination = 'uploads/'.$fileName;
 
                     if(move_uploaded_file($fileTmpName, $relFileUploadDestination)) { 
 
@@ -135,7 +137,7 @@
     } else{
         $countInfo['noFiles'] = 'Няма избрани файлове!';
     }
-
+    ob_end_clean();
     $countInfo['success'] = $countSuccessful . ' от ' . $originalCount . ' файла са качени успешно!';
     echo json_encode(['countInfo' => $countInfo, 'response' => $response, 'fileDataCollection' => $fileDataCollection]);
 

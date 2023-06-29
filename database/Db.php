@@ -1,4 +1,7 @@
-<?php
+<?php 
+
+    $userPathFromLocalhost="http://localhost/proba1/proba/web_project/";
+
     class Db
     {
         private $connection;
@@ -9,13 +12,14 @@
             $dbName = "filemeup";
             $userName = "root";
             $userPassword = "";
-
+            
             $this->connection = new PDO("mysql:host=$dbhost;dbname=$dbName", $userName, $userPassword,
                 [
                     PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
                 ]);
         }
+       
 
         public function getConnection()
         {

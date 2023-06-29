@@ -27,7 +27,7 @@ window.addEventListener("load", function () {
         formData.append('files[]', files[i]);
       }
       console.log("Reached Upload Files");
-      uploadRequest('http://localhost/web_project/displayfiles/uploadFiles/uploadFiles.php', formData);
+      uploadRequest("uploadFiles/uploadFiles.php", formData);
 
     })
 });

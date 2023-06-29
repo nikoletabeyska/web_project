@@ -1,0 +1,29 @@
+﻿Health Helper;PregnantMe
+MyPersonalTutor;Interoom
+TrainMe;fmi_wеather
+WeFit;FFF
+PasswordVault;DeVue
+Scheduler;JamStories
+SIMS;RateUni
+Mountain_Trails;Transport_System
+Transport_System;Mountain_Trails
+PetMe;KinoKatalog
+KinoKatalog;PetMe
+LUOGO;Stocker
+DreamHome;Scheduler
+Stocker;LUOGO
+FitBuddy;GymBuddy
+Moda_Gurus;TwiceTrendy
+BudgetManager;CashGroz
+DeVue;PasswordVault
+JamStories;DreamHome
+Interoom;MyPersonalTutor
+CashGroz;BudgetManager
+PregnantMe;Health Helper
+fmi_wеather;TrainMe
+GymBuddy;FitBuddy
+RateUni;SIMS
+Roommate;Rent_Helper
+TwiceTrendy;Moda_Gurus
+Rent_Helper;Roommate
+FFF;WeFit
