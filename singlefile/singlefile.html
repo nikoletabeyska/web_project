@@ -31,7 +31,11 @@
         <div>
             <button id="downloadButton" >Изтегли</button>
             <button id="shareThroughLink" onclick="shareLink()">Сподели за теглене чрез линк</button>
-            <button id="copyLink" onclick="viewLink()">Сподели за преглед чрез линк</button>
+            <button id="showInputField">Сподели за преглед чрез линк</button>
+            <span id="textInput" style="visibility: hidden;" >Въведи имейл:</span>
+            <input id="emailInput" type="text" style="visibility: hidden;">
+            <button id="copyLink" style="visibility: hidden;" >Копирай линк</button>
+            <span id="emailError"></span>
         </div>
         <div>
             <a href="" id="shareButton" style="visibility: hidden;"></a>

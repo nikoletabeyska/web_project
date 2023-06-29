@@ -3,6 +3,11 @@
    require_once '../../database/UserRequestHandler.php';
    require_once '../../helpers/headers.php';
    require_once '../../database/Db.php';
+   require_once('../../helpers/makeSizeReadable.php');
+
+   
+
+
 
    ob_start();
     $targetDir = "../../uploads/";
@@ -86,11 +91,12 @@
                                 'success' => true,
                                 'message' => 'Файлът е качен успешно!'
                             );
-
+                           // echo format_size($fileSize);
                             $data = [
                                 'id' => $result["id"],
                                 'name' => $fileName,
                                 'username' => $_SESSION['username'], 
+                                'size' => format_size($fileSize),
                                 'date' => date('m/d/Y h:i:s', time())
                             ];
 
