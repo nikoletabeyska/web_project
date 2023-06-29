@@ -237,7 +237,7 @@ class UserRequestHandler {
        
         try{
             $connection = (new Db())->getConnection();
-            $query = "SELECT file.id, file.name, user.username , file.date
+            $query = "SELECT file.id, file.name, file.size, user.username , file.date
             FROM `files` file
             JOIN `users` user ON file.owner = user.id
             WHERE file.owner = :userId
@@ -248,7 +248,6 @@ class UserRequestHandler {
             $selectStatement = $connection->prepare($query);
             $selectStatement->execute(['userId' => $userId, 'userId' => $userId]);
             $rows = $selectStatement->fetchAll();
-            $connection = null;
             return $rows;
 
         } catch (PDOException $e) {

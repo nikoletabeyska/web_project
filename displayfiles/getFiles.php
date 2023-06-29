@@ -1,6 +1,7 @@
 <?php
    require_once '../database/UserRequestHandler.php';
    require_once '../helpers/headers.php';
+   require_once '../helpers/makeSizeReadable.php';
 
    session_start();
 
@@ -8,6 +9,11 @@
     $user_id = $_SESSION['user_id'];
     $request = new UserRequestHandler();
     $files = $request->getFiles($user_id);
+ 
+    foreach($files as &$file){
+     // print_r(format_size($file['size']));
+      $file['size'] = format_size($file['size']);
+    }
     echo json_encode($files);
   }
     else {

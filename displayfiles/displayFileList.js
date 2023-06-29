@@ -44,6 +44,10 @@ function renderFileList(files, isNew = false) {
         owner.textContent = files[i].username;
         row.appendChild(owner);
 
+        var size= document.createElement("td");
+        size.textContent = files[i].size;
+        row.appendChild(size);
+
         var date = document.createElement("td");
         date.textContent = files[i].date;
         row.appendChild(date);
