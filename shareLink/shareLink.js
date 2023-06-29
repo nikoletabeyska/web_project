@@ -38,7 +38,7 @@ window.addEventListener("load",function() {
       console.log("Clicked");
       var input = document.getElementById('emailInput').value;
       var data = {'email': input, 'file_id': pathParam };
-      saveLinkReceiver('saveLinkReceiver.php', data);
+      saveLinkReceiver('../shareLink/saveLinkReceiver.php', data);
         
     });
     
@@ -111,8 +111,8 @@ function clearMessages(){
 
 function copyLinkToBuffer(pathParam) {
   var shareViewLink = document.getElementById("shareViewButton");
-  shareViewLink.href = "shareLink.php?file=" + pathParam;
-  const viewableLink = "shareLink.php?file=" + pathParam; // Replace with the actual viewable link
+  shareViewLink.href = "../sharelink/shareLink.php?file=" + pathParam;
+  const viewableLink = "../sharelink/shareLink.php?file=" + pathParam; // Replace with the actual viewable link
 
   const tempInput = document.createElement('input');
   tempInput.value = viewableLink; 
