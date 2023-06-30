@@ -2,7 +2,8 @@ window.addEventListener("load",function() {
     console.log("View JS on laod");
     const url = new URL(window.location.href);
     const pathParam = encodeURIComponent(url.searchParams.get('file'));
-
+ console.log(url);
+ console.log(pathParam);
 
     var absolutePath= new URL("../shareLink/shareLink.php?file=", document.baseURI).href;
     var shareViewLink = document.getElementById("shareViewButton");
@@ -111,12 +112,11 @@ function clearMessages(){
 
 function copyLinkToBuffer(pathParam) {
   var shareViewLink = document.getElementById("shareViewButton");
-  shareViewLink.href = "../sharelink/shareLink.php?file=" + pathParam;
-  const viewableLink = "../sharelink/shareLink.php?file=" + pathParam; // Replace with the actual viewable link
+  shareViewLink.href = "../shareLink/shareLink.php?file=" + pathParam;
+  var viewableLink = "../shareLink/shareLink.php?file=" + pathParam; // Replace with the actual viewable link
 
   const tempInput = document.createElement('input');
   tempInput.value = viewableLink; 
-  tempInput.value = viewableLink;
   document.body.appendChild(tempInput);
   tempInput.select();
   document.execCommand('copy');
