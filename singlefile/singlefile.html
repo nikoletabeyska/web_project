@@ -9,7 +9,7 @@
         <script src="singlefiledownload.js" defer></script>
         <script src="shareLink.js" defer></script>
         <script src="displaySingleFile.js" defer></script>
-        <script src="../shareLink/shareLink.js" defer></script>
+        <script src="../shareLink/shareViewLink.js" defer></script>
         <link rel="stylesheet" href="singlefile.css">
     </head>
     <body>
@@ -26,20 +26,25 @@
                 <p id="file-type"></p>
                 <p id="file-update-date"></p>
                 <p id="file-owner"></p>
+                <p id="file-owner"></p>
+                <button id ="sharedWith" onclick="showSharedWith()">Покажи с кого е споделен файлът</button>
+                <div id="email-list" style="visibility: hidden;">
+                    <p>HELLO</p>
+                </div>
             </div>
         </div>
         <div>
             <button id="downloadButton" >Изтегли</button>
             <button id="shareThroughLink" onclick="shareLink()">Сподели за теглене чрез линк</button>
             <button id="showInputField">Сподели за преглед чрез линк</button>
+            <span id="success"></span>
             <span id="textInput" style="visibility: hidden;" >Въведи имейл:</span>
             <input id="emailInput" type="text" style="visibility: hidden;">
             <button id="copyLink" style="visibility: hidden;" >Копирай линк</button>
-            <span id="emailError"></span>
+            <span id="error"></span>
         </div>
         <div>
             <a href="" id="shareButton" style="visibility: hidden;"></a>
-            <a href="" id="shareViewButton" style="visibility: hidden;"></a>
 
         </div>
     </body>
