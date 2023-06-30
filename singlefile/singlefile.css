@@ -122,3 +122,16 @@ audio{
   span{
     color:white;
   }
+
+  #email-list {
+    overflow: auto;
+  }
+  #sharedWith {
+    background-color: rgb(215, 213, 213);
+  }
+
+  #not-shared {
+    margin-left:10px;
+    font-size: 13pt;
+    font-style: bold;
+  }

@@ -83,7 +83,7 @@
 
 
                         $result = $uploadFileToDatabase->uploadFile($fileData);
-
+                        
                         if($result["success"]){
 
                             $response[] = array(
@@ -91,9 +91,9 @@
                                 'success' => true,
                                 'message' => 'Файлът е качен успешно!'
                             );
-                           // echo format_size($fileSize);
+                           
                             $data = [
-                                'id' => $result["id"],
+                                'id' => $id,
                                 'name' => $fileName,
                                 'username' => $_SESSION['username'], 
                                 'size' => format_size($fileSize),
