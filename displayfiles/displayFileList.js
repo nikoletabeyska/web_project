@@ -31,6 +31,10 @@ function renderFileList(files, isNew = false) {
         check.appendChild(checkbox);
         row.appendChild(check);
 
+        if(isNew){
+            console.log(files[i].id);
+            files[i].id = decodeURIComponent(files[i].id);
+        }
         var name = document.createElement("td");
         var link = document.createElement("a");
         console.log(files);
