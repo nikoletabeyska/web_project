@@ -10,12 +10,19 @@ window.addEventListener("load",function() {
         // window.open('singlefile.php?path'+ pathParam + '_blank');
  //      sendRequest("http://localhost/web_project/singlefile/singlefile.php?file="+pathParam,[] );
         console.log("here:",pathParam);
-        window.location = "../singlefile/singlefile.php?file=" + pathParam + "&email=" + encodeURIComponent(url.searchParams.get('email')) ;
+        if(url.searchParams.get('email')){
+            console.log("outside");
+            window.location = "../singlefile/singlefile.php?file=" + pathParam + "&email=" + encodeURIComponent(url.searchParams.get('email'));
+        } else {
+            console.log("inside");
+            window.location = "../singlefile/singlefile.php?file=" + pathParam;
+        }
+        
     })
 
     var absolutePathn= new URL("../singlefile/singlefile.php?file=", document.baseURI).href;
     var shareLink = document.getElementById("shareButton");
-    shareLink.href = absolutePathn + pathParam + "&email=" + encodeURIComponent(url.searchParams.get('email')) ;
+    shareLink.href = absolutePathn + pathParam;
     shareLink.textContent = absolutePathn + pathParam;
     
 })

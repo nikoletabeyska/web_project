@@ -1,7 +1,6 @@
 <?php
     require_once "../database/Db.php";
 $fileId = $_GET['file'];
-$hashedEmail = $_GET['email'];
             $connection = (new Db())->getConnection();
             $selectStatement = $connection->prepare("SELECT path , name, size, type FROM `files` WHERE id=?");
             $selectStatement->execute([$fileId]);
@@ -35,23 +34,24 @@ header('Content-Length: '. $fileinfo['size']);
 
 ob_end_clean();
 readfile($url);
+if(isset($_GET['email'])){
+    $hashedEmail = $_GET['email'];
+    try{
+        $connection = (new Db())->getConnection();
 
-try{
-    $connection = (new Db())->getConnection();
+        $updateStatement = $connection->prepare("
+            UPDATE `sharedfiles`
+            SET isDownloaded  = :isDownloaded
+            WHERE hashedEmail = :hashedEmail AND file_id = :file_id
+        ");
+        $updateStatement->execute(["isDownloaded" => 1, "hashedEmail" => $hashedEmail, "file_id" => $fileId]);
 
-    $updateStatement = $connection->prepare("
-        UPDATE `sharedfiles`
-        SET isDownloaded  = :isDownloaded
-        WHERE hashedEmail = :hashedEmail AND file_id = :file_id
-    ");
-    $updateStatement->execute(["isDownloaded" => 1, "hashedEmail" => $hashedEmail, "file_id" => $fileId]);
-
-} catch (PDOException $e) {
-    http_response_code(500);
-    print "Error: " . $e->getMessage();
-    echo json_encode(['success'=> true]);
+    } catch (PDOException $e) {
+        http_response_code(500);
+        print "Error: " . $e->getMessage();
+        echo json_encode(['success'=> true]);
+    }
 }
-
 
 
 
