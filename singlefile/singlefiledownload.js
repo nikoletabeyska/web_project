@@ -15,7 +15,7 @@ window.addEventListener("load",function() {
 
     var absolutePathn= new URL("../singlefile/singlefile.php?file=", document.baseURI).href;
     var shareLink = document.getElementById("shareButton");
-    shareLink.href = absolutePathn + pathParam;
+    shareLink.href = absolutePathn + pathParam + "&email=" + encodeURIComponent(url.searchParams.get('email')) ;
     shareLink.textContent = absolutePathn + pathParam;
     
 })
