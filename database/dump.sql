@@ -118,6 +118,9 @@ CREATE TABLE `sharedfiles` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `file_id` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `isSeen` tinyint(1) NOT NULL,
+  `hashedEmail` varchar(255) NOT NULL,
+  `isDownloaded` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `file_id_FK_1` (`file_id`),
   CONSTRAINT `file_id_FK_1` FOREIGN KEY (`file_id`) REFERENCES `files` (`id`) ON DELETE CASCADE
