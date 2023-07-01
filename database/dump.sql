@@ -54,45 +54,31 @@ CREATE TABLE `files` (
 
 LOCK TABLES `files` WRITE;
 INSERT INTO `files` (`id`, `name`, `size`, `type`, `date`, `owner`, `path`) VALUES
-('$2y$10$.kW1.iibjls.MlnuvPaQ0O4g2hy9lA4d8N3Hh3NsCfA.LOnHoRtNy', 'UserDocumentation.docx', 527721, 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', '2023-06-25 01:09:30', 5, 'uploads/UserDocumentation.docx'),
-('$2y$10$/0UuvOQ8rmDYk6y93xiYsOahhUttmO3209NnrQAikhqK0UkEwNI3K', 'User.php', 1030, 'application/octet-stream', '2023-06-25 01:09:46', 5, 'uploads/User.php'),
+('$2y$10$/80W2pCTE8TSSrvixCc2sO.yrT53Ky3hYxI3flhA7VqqqKtmSdXz.', 'README.txt', 650, 'text/plain', '2023-07-01 23:17:00', 5, 'uploads/README.txt'),
 ('$2y$10$1qv38WujGtC3fzO/tpYXr.1j5HQFG9zbO3GWljhgGFBIrjxh4ycIi', 'My recording 8.mp3', 122654, 'audio/mpeg', '2023-06-25 15:15:34', 5, 'uploads/My recording 8.mp3'),
-('$2y$10$2ziMrQRc/DhCaMBLPbhPgO596rPTELB1qsQ0SZeftUbnlEppVc8Ly', 'uploadPage.html', 3265, 'text/html', '2023-06-25 15:07:07', 6, 'uploads/uploadPage.html'),
-('$2y$10$6kq.JDsVJ2jzRodBwLGJKeyAw54irXa.ewD2GnNwYB4HKFwgnQSyS', 'IzbiraemiDisciplini.xlsx', 11087, 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', '2023-06-25 16:17:45', 5, 'uploads/IzbiraemiDisciplini.xlsx'),
-('$2y$10$6lKeV0npbyKnXzPN4Kkk4.H6zrpWXyaSpoiLyXzvvp4/J9kS1.E..', 'programming.gif', 7546, 'image/gif', '2023-06-25 15:11:55', 5, 'uploads/programming.gif'),
-('$2y$10$AiDk3TahpiRN4Blp0Nw1sOq75QlOEpvwU.9MKeAnkYVXl1CGbg8qK', 'Untitled-1.xsd', 14055, 'application/xml', '2023-06-25 15:44:49', 5, 'uploads/Untitled-1.xsd'),
-('$2y$10$B6Vsw1xuOOPJJ34F94C/M.MrQf7sPYHMxhbKKnRm1FOpObsVUuty6', 'output.json', 59, 'application/json', '2023-06-25 03:35:37', 5, 'uploads/output.json'),
+('$2y$10$6ATlHIReJX4V4yGCY3PBnul7kJubVBNwqRUPnAjY8.yodfGZDgXsS', 'addCateg.png', 40769, 'image/png', '2023-07-01 23:17:00', 5, 'uploads/addCateg.png'),
+('$2y$10$a8PLf7RRvAeXbALTXjR9Qelvdn8JeHug9G.KexCU/5.SYJSoUTtIu', 'User.php', 1030, 'application/octet-stream', '2023-07-01 23:17:01', 5, 'uploads/User.php'),
 ('$2y$10$biConjLhPqiW6ZL6aJsP9utGuZr0ohzp6tmSKxRuWeJ07203phbE2', 'Sound_Task_Mihaela_Ognyan.mp4', 16837680, 'video/mp4', '2023-06-25 15:15:34', 5, 'uploads/Sound_Task_Mihaela_Ognyan.mp4'),
-('$2y$10$C9GAOPKSHKvtSuDDFJt/ZudGw3RAeUCdSy2HbYu0VbNtq36Gg0APy', 'wheather.png', 49260, 'image/png', '2023-06-25 02:30:14', 5, 'uploads/wheather.png'),
-('$2y$10$emf.UYXfMq6r6X3EXdv5F.hVekd07x4SEXha2hwkLLQW2UKGdYQNm', '6490e3f0130162.09135654.md', 131, 'application/octet-stream', '2023-06-25 03:45:58', 5, 'uploads/6490e3f0130162.09135654.md'),
-('$2y$10$I2v8agPcrLNhlxjnylC6CeDylygyRslAwwlyHhD6K8bu7x0yTi/fS', 'User.php', 1030, 'application/octet-stream', '2023-06-25 03:45:58', 5, 'uploads/User.php'),
-('$2y$10$jb3yxf9ngNIDi0Pn6PO5SejjU81EtPcYISe5RF8HM7UHDg0wMpvxG', 'singlefile.php', 1142, 'application/octet-stream', '2023-06-25 03:29:58', 5, 'uploads/singlefile.php'),
-('$2y$10$jlYdu8tBAFDrYatKCYlbke6GXB3t7MpE1Pb8G/AgQNIPvZDQuLrXW', 'UserDocumentation.docx', 527721, 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', '2023-06-25 01:09:46', 5, 'uploads/UserDocumentation.docx'),
-('$2y$10$k0oQbci5Y4u7eKc2O0ms2.k3xi3vCAf5/k7YtTQd6iuaRgy069edi', 'Db.php', 661, 'application/octet-stream', '2023-06-25 03:45:58', 5, 'uploads/Db.php'),
-('$2y$10$KMicFJUpJ2a7A2zIEjIhveWcVWkX7A3L1bWfWl0IUpmp1BRMxSQB.', '6490dead5b6557.55799225.avif', 15084, 'image/avif', '2023-06-25 03:45:58', 5, 'uploads/6490dead5b6557.55799225.avif'),
-('$2y$10$L2KyMyvT7at7JJnmPGThf.pI6lFV.OxGq9B6sapsUGTKSw5abGKMO', 'trying.txt', 133, 'text/plain', '2023-06-25 04:01:18', 5, 'uploads/trying.txt'),
-('$2y$10$LHVBlv6COuiL0zSTHnX3IeTywPRZjzSjChSn4M7q2OkUlRAgQdVn.', 'UserRequestHandler.php', 1534, 'application/octet-stream', '2023-06-25 01:09:46', 5, 'uploads/UserRequestHandler.php'),
-('$2y$10$m0IEh3dh5SoV/hRqdcMLj./C3Q36XG55chzhWdpYpG9l.Owf4V38q', 'UserDocumentation.docx', 527721, 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', '2023-06-25 01:20:45', 5, 'uploads/UserDocumentation.docx'),
-('$2y$10$m582WvLtOQXRH3nONZTcH..kMA7eQUHRSOKyETopeMmZiwU6ha.JG', 'singlefile.php', 1150, 'application/octet-stream', '2023-06-25 03:37:17', 5, 'uploads/singlefile.php'),
-('$2y$10$NvwfXk9YnLkzsDtzL8sqNOcS4slm4av5TQjNwr2c.NWfvsl1giwWa', 'HW3_Mihaela_Ilieva_62550.php', 469, 'application/octet-stream', '2023-06-25 03:24:38', 5, 'uploads/HW3_Mihaela_Ilieva_62550.php'),
-('$2y$10$ohG8BhmPhnZhgZQSgisCluLJkXeG5C9dB7O60gpJxDd6qucvpTTFW', 'singlefile.php', 1152, 'application/octet-stream', '2023-06-25 03:29:21', 5, 'uploads/singlefile.php'),
-('$2y$10$pW.Hy3qcBWH5J/gy66h.fuVUSSOfMUXNfQpTez6t9bH411plLFOPO', '6490ab2a0f4ec2.43212631.txt', 0, 'text/plain', '2023-06-25 03:45:58', 5, 'uploads/6490ab2a0f4ec2.43212631.txt'),
-('$2y$10$QITgN5kPCoTL.dqHxihuW.wkP5.xM3y/TkbRgGdUqnEaSDjevWDWS', 'UserRequestHandler.php', 11092, 'application/octet-stream', '2023-06-23 19:53:10', 5, 'uploads/UserRequestHandler.php'),
-('$2y$10$QNJ5Fko8ZdG1N4lI6CRIxuxHoB844lpcQQztGq3rQAA7mJqNZRuQq', 'Trying to see if it will work.docx', 12076, 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', '2023-06-25 15:37:13', 5, 'uploads/Trying to see if it will work.docx'),
-('$2y$10$rJ8/beAUaCOVWG1Dz1Jvd.nBXUnF5.WC/pzDck.XovDNU.8gPY5e6', 'dump.sql', 8575, 'application/octet-stream', '2023-06-25 15:50:34', 5, 'uploads/dump.sql'),
-('$2y$10$RkD9g3lyAqFKxl1Uv1PEK.NZ6nKAIvJ.iA8lP/LKejfhxu7I0F6Xi', '62550_Mihaela_Ilieva.html', 1594, 'text/html', '2023-06-25 02:20:45', 5, 'uploads/62550_Mihaela_Ilieva.html'),
-('$2y$10$sN.Ta87Of0zqqCUtMz8eK.W9hH/CPGD7Mx74x7hoexGf2YgQk2Tv6', 'HW3_Mihaela_Ilieva_62550.php', 469, 'application/octet-stream', '2023-06-26 03:23:58', 5, 'uploads/HW3_Mihaela_Ilieva_62550.php'),
-('$2y$10$Uk2PJipVnAT56ni4zMgsN.eeS13IIWgtGRMdJqwB4KTCAtpabMRxW', 'displaySingleFile.php', 1148, 'application/octet-stream', '2023-06-25 03:45:58', 5, 'uploads/displaySingleFile.php'),
-('$2y$10$uqzpADy3mtYQbSf1PUxcleoiZmiw8JirmyjfoG1GdoYKIoT77Rj2u', 'displaySingleFile.php', 1148, 'application/octet-stream', '2023-06-25 03:30:53', 5, 'uploads/displaySingleFile.php'),
-('$2y$10$uU4PngvlfHL8HaZhUZeiXurGugYE6j3ytsHBRp0hCe5RC87T6Geta', '20230427_174424.m4a', 84310, 'audio/x-m4a', '2023-06-25 15:15:34', 5, 'uploads/20230427_174424.m4a'),
-('$2y$10$v1oR1wAP2l.i3WDb/hEb.OWTvXjAGvIE/FMD2aFWCSiwoKOa22Jb6', '62550.pptx', 934121, 'application/vnd.openxmlformats-officedocument.presentationml.presentation', '2023-06-25 15:38:44', 5, 'uploads/62550.pptx'),
-('$2y$10$VA0RwufOp4UzG58Cu1A97eyG2LNREzOWAyanrMmslCLySoiHgOQ4i', 'project_xslt.xsl', 2281, 'text/xml', '2023-06-25 15:44:49', 5, 'uploads/project_xslt.xsl'),
-('$2y$10$xhfSZevnSTUcr/1dixEjeudZyJBFupxGl9GcZJg3EYM5VpvDLHVvK', 'Referat_Posledno_Opravqne.pdf', 479085, 'application/pdf', '2023-06-25 01:21:33', 5, 'uploads/Referat_Posledno_Opravqne.pdf'),
-('$2y$10$yK9x9Ry3D8467K12uEEYnen6fr88K0jNWTfih9dPLVg62AfiHWiHW', 'dump.sql', 3616, 'application/octet-stream', '2023-06-25 03:23:58', 5, 'uploads/dump.sql'),
-('$2y$10$yPH8ipAZP7utfe4NjN.4Me1cUtA9IqD39yGfacqy28qmOoPIZh6lS', 'IzbiraemiDisciplini.xlsx', 11087, 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', '2023-06-27 00:11:18', 5, 'uploads/IzbiraemiDisciplini.xlsx'),
-('$2y$10$zIeBjOEglC/TjjTuTTPbKuL9kfsnnKB1tTlAqYdKANAQkePchK8sa', 'zad1.xml', 718, 'text/xml', '2023-06-25 15:44:57', 5, 'uploads/zad1.xml');
+('$2y$10$K21yaMso85WKCjNPLikf6O9/j9fIvgAYQwxGj7TKrrdj9WVrqI1Oi', 'zad1.xml', 718, 'text/xml', '2023-07-01 23:19:03', 5, 'uploads/zad1.xml'),
+('$2y$10$kKmjKW9JcwGgDFSyiSFHVeCWMP.MuTvSctkjxb7gem/E0N9ifkNfi', '6490de57d30c60.82517700.html', 1252, 'text/html', '2023-07-02 00:14:28', 6, 'uploads/6490de57d30c60.82517700.html'),
+('$2y$10$Kof8hAjlWWNA.wMhPCOZtO/JJn157m5spr30X76Tljt6ytbHfBz82', '62550_Mihaela_Ilieva.html', 1594, 'text/html', '2023-07-01 23:17:00', 5, 'uploads/62550_Mihaela_Ilieva.html'),
+('$2y$10$kYZRUdG7yfHqUX.bajD3nOLjsMhLIBPMV.JRuisoXaROhoFShyt0i', 'backgroundphoto.svg', 20965, 'image/svg+xml', '2023-07-01 23:19:03', 5, 'uploads/backgroundphoto.svg'),
+('$2y$10$l.73d0qtdXg732Lj4PqGcuXN8jn6/kI7hX7XjIr3aBRaNJQ2Up/Ii', 'output.json', 59, 'application/json', '2023-07-01 23:19:03', 5, 'uploads/output.json'),
+('$2y$10$lppnSvxbQRo7PIk/XgztF.WC2D2TFAY7liCg07A2.4i/NYDXUHRWe', 'IzbiraemiDisciplini.csv', 868, 'text/csv', '2023-07-01 23:17:00', 5, 'uploads/IzbiraemiDisciplini.csv'),
+('$2y$10$lZ6JN5v5kgnJK7CwVmNvm.l29dQ1C7/GIagO.yg0y57iOnmXLnxEa', 'programming.gif', 7546, 'image/gif', '2023-07-01 23:19:03', 5, 'uploads/programming.gif'),
+('$2y$10$MCZrOVnvJsLBiII0.3YUZuxlX/m3F4cq4UMrPK6K1nbrrZKrM1eY2', 'project_xslt.xsl', 2281, 'text/xml', '2023-07-01 23:21:01', 5, 'uploads/project_xslt.xsl'),
+('$2y$10$Ne6YEoCQGoVBHuJ2ceSoeOB44iMUuCkGCWAOFFfUVmM/HuMwQYDWW', 'Untitled-1 (1).xsd', 14055, 'application/xml', '2023-07-01 23:19:03', 5, 'uploads/Untitled-1 (1).xsd'),
+('$2y$10$NtM.x5ifWZrWQVDKbh4sDuAJ06ckOH/eG810JuHdRuhfXA5O..FhG', 'sendRequestUtility.js', 2222, 'text/javascript', '2023-07-01 23:19:03', 5, 'uploads/sendRequestUtility.js'),
+('$2y$10$nZHZRxWq9eIVlZwNmjt7I.xX/qhaU0.d9QQDGAoALGQGNwCcXUhXG', '62550_Mihaela_Ilieva.css', 597, 'text/css', '2023-07-01 23:17:00', 5, 'uploads/62550_Mihaela_Ilieva.css'),
+('$2y$10$p9EV9dK03jtICkig/3aP8eWQtehd2ajliXtbgELwFSFjTo5BseWQy', 'dump (1).sql', 3614, 'application/octet-stream', '2023-07-01 23:19:03', 5, 'uploads/dump (1).sql'),
+('$2y$10$Qe8FhyolJzkLz/TBdG7oGu9.W17Ich86Fzod.ac9pxEH4r5pqXkQK', '62540_62550_documentation.docx', 1854685, 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', '2023-07-01 23:17:00', 5, 'uploads/62540_62550_documentation.docx'),
+('$2y$10$s1/F078Sxw8VnLoIgZxdF.0JXNwYs7qK07bAHP0AgwNRvASf328UO', 'Referat_Posledno_Opravqne.pdf', 479085, 'application/pdf', '2023-07-01 23:21:01', 5, 'uploads/Referat_Posledno_Opravqne.pdf'),
+('$2y$10$SFoJ5H.lPdTbit3WKlVQJOliXYmgOXe4ME.6ERfGLXsgGM7F4xpf.', '62550 (1).pptx', 934121, 'application/vnd.openxmlformats-officedocument.presentationml.presentation', '2023-07-01 23:19:03', 5, 'uploads/62550 (1).pptx'),
+('$2y$10$SOQaW/FgO6KIbvxFhirJwe6UINZy.584egXQJYbBIrgGHAsincljy', '62540_62550_documentation.pdf', 1782126, 'application/pdf', '2023-07-01 23:17:00', 5, 'uploads/62540_62550_documentation.pdf'),
+('$2y$10$SVF4kvaTrnxrLRFEObkGxuM1xKACLkPvWTRqna/TlhY3fMDboQ.vG', 'README.md', 131, 'application/octet-stream', '2023-07-01 23:21:01', 5, 'uploads/README.md'),
+('$2y$10$vJKywSWY3LPHDuLJp0iXROsGi3eFX9hw1Y8B3aWmSkolspZplP3MG', '07.jpg', 1353084, 'image/jpeg', '2023-07-01 23:15:06', 5, 'uploads/07.jpg'),
+('$2y$10$yIUOgJiD7ryax3udKYTapeQ0.Varcjr/AX3JHKlr1rBQL.9/NUu4W', 'IzbiraemiDisciplini.csv', 868, 'text/csv', '2023-07-02 00:19:33', 5, 'uploads/IzbiraemiDisciplini.csv');
 UNLOCK TABLES;
-
 -- Table structure for table `permissions`
 CREATE TABLE `permissions` (
   `permission_id` int(255) NOT NULL AUTO_INCREMENT,
@@ -110,8 +96,9 @@ CREATE TABLE `permissions` (
 
 LOCK TABLES `permissions` WRITE;
 INSERT INTO `permissions` (`permission_id`, `file_id`, `granted_by`, `granted_to`) VALUES
-(3, '$2y$10$L2KyMyvT7at7JJnmPGThf.pI6lFV.OxGq9B6sapsUGTKSw5abGKMO', 5, 2),
-(4, '$2y$10$2ziMrQRc/DhCaMBLPbhPgO596rPTELB1qsQ0SZeftUbnlEppVc8Ly', 6, 5);
+(1, '$2y$10$/80W2pCTE8TSSrvixCc2sO.yrT53Ky3hYxI3flhA7VqqqKtmSdXz.', 5, 2),
+(2, '$2y$10$SOQaW/FgO6KIbvxFhirJwe6UINZy.584egXQJYbBIrgGHAsincljy', 5, 6),
+(3, '$2y$10$kKmjKW9JcwGgDFSyiSFHVeCWMP.MuTvSctkjxb7gem/E0N9ifkNfi', 6, 5);
 UNLOCK TABLES;
 
 CREATE TABLE `sharedfiles` (
