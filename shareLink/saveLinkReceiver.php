@@ -14,13 +14,13 @@
 
     try{
         $connection = (new Db())->getConnection();
-        
+        $hashedEmail = password_hash( $input['email'], PASSWORD_DEFAULT);
         $insertStatement = $connection->prepare("
-            INSERT INTO `sharedfiles` (file_id, email)
-            VALUE (:file_id, :email)
+            INSERT INTO `sharedfiles` (file_id, email, isSeen, hashedEmail, isDownloaded)
+            VALUE (:file_id, :email, :isSeen, :hashedEmail, :isDownloaded)
         ");
-        $insertStatement->execute(["file_id" => $input["file_id"], "email" => $input["email"]]);
-        echo json_encode(['success'=> true]);
+        $insertStatement->execute(["file_id" => $input["file_id"], "email" => $input["email"], "isSeen" => 0, "hashedEmail" => $hashedEmail, "isDownloaded" => 0]);
+        echo json_encode(['success'=> true, "hashedEmail" => $hashedEmail]);
 
     } catch (PDOException $e) {
         http_response_code(500);

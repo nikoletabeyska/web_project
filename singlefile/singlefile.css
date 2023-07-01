@@ -123,15 +123,31 @@ audio{
     color:white;
   }
 
-  #email-list {
-    overflow: auto;
+  #email-list, #seen-email-list, #download-email-list {
+    /*overflow: auto;*/
+    margin-right:100px;
+    font-size: 13pt;
   }
-  #sharedWith {
+  #sharedWith,#seenBy, #downloadedBy {
     background-color: rgb(215, 213, 213);
   }
 
-  #not-shared {
+
+
+  .button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .list-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  #not-shared{
     margin-left:10px;
-    font-size: 13pt;
-    font-style: bold;
   }

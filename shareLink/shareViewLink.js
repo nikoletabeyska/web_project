@@ -6,6 +6,7 @@ window.addEventListener("load",function() {
     const pathParam = encodeURIComponent(url.searchParams.get('file'));
 
     inputButton.addEventListener('click', function() {
+        clearMessages();
         changeVisibility("visible");
     });
 
@@ -51,7 +52,7 @@ function saveLinkReceiver(url,data, pathParam){
       clearMessages();
         if(responseData.success){
           console.log("copy link",data['file_id']);
-          copyToBuffer(pathParam);
+          copyToBuffer(pathParam,responseData.hashedEmail);
           changeVisibility("hidden");
           var success = document.getElementById('success');
           success.textContent = "Копирано в буфера!";
@@ -76,10 +77,11 @@ function clearMessages(){
 }
 
 
-function copyToBuffer(pathParam){
+function copyToBuffer(pathParam, hashedEmail){
   var absolutePath= new URL("../shareLink/shareLink.php?file=", document.baseURI).href;
- 
-  const viewableLink = absolutePath + pathParam; 
+ //var input = document.getElementById('emailInput').value;
+  console.log(hashedEmail);
+  const viewableLink = absolutePath + pathParam + "&email=" + encodeURIComponent(hashedEmail); 
 
   const tempInput = document.createElement('input');
   tempInput.value = viewableLink;
@@ -87,4 +89,5 @@ function copyToBuffer(pathParam){
   tempInput.select();
   document.execCommand('copy');
   document.body.removeChild(tempInput);
+  //input.value = "";
 }

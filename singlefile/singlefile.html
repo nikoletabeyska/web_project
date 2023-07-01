@@ -10,7 +10,10 @@
         <script src="shareLink.js" defer></script>
         <script src="displaySingleFile.js" defer></script>
         <script src="../shareLink/shareViewLink.js" defer></script>
+        <script src="showList.js" defer></script>
+        <script src="showSeenBy.js" defer></script>
         <script src="showSharedWith.js" defer></script>
+        <script src="showDownloadedBy.js" defer></script>
         <link rel="stylesheet" href="singlefile.css">
     </head>
     <body>
@@ -28,8 +31,18 @@
                 <p id="file-update-date"></p>
                 <p id="file-owner"></p>
                 <p id="file-owner"></p>
-                <button id ="sharedWith">Покажи с кого е споделен файлът</button>
-                <div id="email-list" style="visibility: hidden;">
+                <div class="button-container">
+                    <button id ="sharedWith">Покажи с кого е споделен файлът</button>
+                    <button id ="seenBy">Покажи от кого е видян файлът</button>
+                </div>
+                <div class="list-container">
+                    <div id="email-list" style="visibility: hidden;">
+                    </div>
+                    <div id="seen-email-list" style="visibility: hidden;">
+                    </div>
+                </div>
+                <button id ="downloadedBy">Покажи от кого е изтеглен файлът</button>
+                <div id="download-email-list" style="visibility: hidden;">
                 </div>
             </div>
         </div>
