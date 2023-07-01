@@ -12,10 +12,10 @@ window.addEventListener("load",function() {
         console.log("here:",pathParam);
         window.location = "../singlefile/singlefile.php?file=" + pathParam + "&email=" + encodeURIComponent(url.searchParams.get('email')) ;
     })
-    window.onload=()=>{
+
     var absolutePathn= new URL("../singlefile/singlefile.php?file=", document.baseURI).href;
     var shareLink = document.getElementById("shareButton");
     shareLink.href = absolutePathn + pathParam;
     shareLink.textContent = absolutePathn + pathParam;
-    }
+    
 })
