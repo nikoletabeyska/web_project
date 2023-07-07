@@ -8,13 +8,13 @@
     try{
         $connection = (new Db())->getConnection();
         $selectStatement = $connection->prepare("
-            SELECT email
+            SELECT email, isSeenDate
             FROM `sharedfiles` 
             WHERE file_id = :file_id AND isSeen = 1"
         );
         $selectStatement->execute([":file_id" => $file_id]);
         $seenEmailList = $selectStatement->fetchAll();
-
+        //print_r($seenEmailList);
 
         echo json_encode(['success'=> true, "emails" => $seenEmailList]);
 

@@ -34,6 +34,9 @@ header('Content-Length: '. $fileinfo['size']);
 
 ob_end_clean();
 readfile($url);
+date_default_timezone_set("Europe/Sofia");
+$date = date('Y-m-d H:i:s');
+
 if(isset($_GET['email'])){
     $hashedEmail = $_GET['email'];
     try{
@@ -41,10 +44,10 @@ if(isset($_GET['email'])){
 
         $updateStatement = $connection->prepare("
             UPDATE `sharedfiles`
-            SET isDownloaded  = :isDownloaded
+            SET isDownloaded  = :isDownloaded, isDownloadedDate  = :isDownloadedDate
             WHERE hashedEmail = :hashedEmail AND file_id = :file_id
         ");
-        $updateStatement->execute(["isDownloaded" => 1, "hashedEmail" => $hashedEmail, "file_id" => $fileId]);
+        $updateStatement->execute(["isDownloaded" => 1, "isDownloadedDate" => $date, "hashedEmail" => $hashedEmail, "file_id" => $fileId]);
 
     } catch (PDOException $e) {
         http_response_code(500);

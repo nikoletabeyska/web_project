@@ -8,7 +8,7 @@
     try{
         $connection = (new Db())->getConnection();
         $selectStatement = $connection->prepare("
-            SELECT email
+            SELECT email, isDownloadedDate
             FROM `sharedfiles` 
             WHERE file_id = :file_id AND isDownloaded = 1"
         );

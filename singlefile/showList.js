@@ -1,5 +1,5 @@
 
-function showList(requestFile, listId, errorMessage){
+function showList(requestFile, listId, errorMessage, type){
 
     var list = document.getElementById(listId);
 
@@ -15,14 +15,14 @@ function showList(requestFile, listId, errorMessage){
             list.removeChild(ul);
 
         }
-            getEmails(requestFile, listId, errorMessage);
+            getEmails(requestFile, listId, errorMessage, type);
         
     }
 
 };
 
 
-function getEmails(requestFile, listId, errorMessage){
+function getEmails(requestFile, listId, errorMessage,type){
     const url = new URL(window.location.href);
     const file_id = url.searchParams.get('file');
     fetch(requestFile, {
@@ -44,12 +44,12 @@ function getEmails(requestFile, listId, errorMessage){
     .then(responseData => {
         //console.log(responseData);
         if(responseData.success){
-            displayEmails(responseData.emails,listId,errorMessage);
+            displayEmails(responseData.emails,listId,errorMessage, type);
         }
     })
 }
 
-function displayEmails(emailList,listId, errorMessage){
+function displayEmails(emailList,listId, errorMessage,type){
     var list = document.getElementById(listId);
     var none = document.createElement('p');
     if(emailList.length === 0){
@@ -68,7 +68,16 @@ function displayEmails(emailList,listId, errorMessage){
         ul.id = listId + "-ul";
         for (var i = 0; i < emailList.length; i++) { 
             var li = document.createElement("li");
-            li.textContent = emailList[i].email;
+            if(type === "download"){
+                li.textContent = emailList[i].email + "  " + emailList[i].isDownloadedDate;
+            }
+            else if (type ==="shared"){
+                li.textContent = emailList[i].email;
+            }
+            else{
+                li.textContent = emailList[i].email + "  " + emailList[i].isSeenDate;
+            }
+
             ul.appendChild(li);   
         }
         list.appendChild(ul);
